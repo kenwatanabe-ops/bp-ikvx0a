@@ -729,6 +729,110 @@
     .hist-close .body{font-size:14px}
   }
 
+  /* === v6: Chapter tag, WHO-WHAT-HOW grid, SKU WHW, Monthly table === */
+  .chapter-tag{
+    position:absolute;top:32px;left:32px;
+    font-family:"Noto Serif JP",serif;font-size:11px;letter-spacing:.32em;
+    color:var(--gold);font-weight:600;
+  }
+  .slide.dark .chapter-tag{color:#c9a961}
+
+  .whw-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:32px;
+  }
+  @media (max-width:780px){.whw-grid{grid-template-columns:1fr}}
+  .whw{
+    background:#fff;border:1px solid var(--washi-d);border-radius:10px;
+    padding:34px 28px;position:relative;
+  }
+  .whw.who{border-top:5px solid var(--gold)}
+  .whw.what{border-top:5px solid var(--leaf)}
+  .whw.how{border-top:5px solid var(--accent)}
+  .whw .sym{
+    font-family:"Noto Serif JP",serif;font-size:36px;font-weight:800;
+    line-height:1;margin-bottom:14px;
+  }
+  .whw.who .sym{color:var(--gold)}
+  .whw.what .sym{color:var(--leaf)}
+  .whw.how .sym{color:var(--accent)}
+  .whw .head{
+    font-family:"Noto Serif JP",serif;font-size:22px;font-weight:800;
+    color:var(--ink);margin-bottom:6px;
+  }
+  .whw .en{
+    font-size:11px;letter-spacing:.4em;color:var(--muted);font-weight:600;
+    margin-bottom:18px;text-transform:uppercase;
+  }
+  .whw ul{list-style:none;margin:0;padding:0}
+  .whw ul li{
+    font-size:14.5px;line-height:1.9;color:var(--ink-soft);
+    padding:7px 0 7px 18px;position:relative;
+  }
+  .whw ul li::before{
+    content:"";position:absolute;left:0;top:17px;width:8px;height:2px;
+    background:var(--gold);
+  }
+  .whw.what ul li::before{background:var(--leaf)}
+  .whw.how ul li::before{background:var(--accent)}
+
+  /* SKU WHO-WHAT-HOW block */
+  .skuwhw-wrap{margin-top:32px}
+  .skuwhw-title{
+    font-family:"Noto Serif JP",serif;font-size:18px;font-weight:800;
+    color:var(--ink);border-left:4px solid var(--gold);padding-left:14px;
+    margin-bottom:18px;letter-spacing:.04em;
+  }
+  .skuwhw{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  }
+  @media (max-width:780px){.skuwhw{grid-template-columns:1fr}}
+  .skuwhw-card{
+    background:var(--washi-l);border:1px solid var(--washi-d);border-radius:8px;
+    padding:22px 20px;
+  }
+  .skuwhw-card .sname{
+    font-family:"Noto Serif JP",serif;font-size:18px;font-weight:800;
+    color:var(--ink);margin-bottom:4px;letter-spacing:.04em;
+  }
+  .skuwhw-card .sro{
+    font-size:10.5px;letter-spacing:.35em;color:var(--gold);font-weight:600;
+    margin-bottom:14px;
+  }
+  .skuwhw-card .row{
+    display:grid;grid-template-columns:48px 1fr;gap:8px;
+    font-size:13px;line-height:1.7;color:var(--ink-soft);
+    padding:6px 0;border-bottom:1px dashed var(--washi-d);
+  }
+  .skuwhw-card .row:last-child{border-bottom:none}
+  .skuwhw-card .row b{color:var(--leaf);font-weight:700;font-family:"Noto Serif JP",serif;font-size:12px;letter-spacing:.1em}
+
+  /* Monthly aroma table */
+  .montbl-wrap{margin-top:24px;overflow-x:auto;border:1px solid var(--washi-d);border-radius:8px;background:#fff}
+  .montbl{
+    width:100%;border-collapse:collapse;font-size:14px;color:var(--ink-soft);
+    min-width:680px;
+  }
+  .montbl th, .montbl td{
+    padding:14px 16px;text-align:left;border-bottom:1px solid var(--washi-d);
+    border-right:1px solid var(--washi-d);line-height:1.7;vertical-align:top;
+  }
+  .montbl thead th{
+    background:var(--leaf);color:#fff;font-family:"Noto Serif JP",serif;
+    font-weight:700;font-size:13px;letter-spacing:.18em;
+  }
+  .montbl tr td:first-child{
+    background:var(--washi-l);font-family:"Noto Serif JP",serif;font-weight:800;
+    color:var(--ink);width:80px;
+  }
+  .montbl tr td:nth-child(2){font-family:"Noto Serif JP",serif;font-weight:700;color:var(--ink);width:160px}
+  .montbl tr td:nth-child(3){color:var(--muted);width:200px}
+  .montbl tr td:last-child{border-right:none;font-family:"Noto Serif JP",serif;color:var(--leaf);font-weight:600}
+  .montbl tr:last-child td{border-bottom:none}
+  @media (max-width:780px){
+    .montbl{font-size:12.5px;min-width:560px}
+    .montbl th, .montbl td{padding:10px 10px}
+  }
+
   /* Print */
   @media print{
     .slide{page-break-after:always;min-height:auto;padding:40px 24px;break-inside:avoid}
@@ -747,6 +851,7 @@
 
 <!-- Slide 1: タイトル -->
 <section class="slide">
+  <span class="chapter-tag">❶ 痛み</span>
   <span class="slide-num">01 / 19</span>
   <div class="kicker">Brand of Calm Focus</div>
   <h1 class="brand"><span class="ruby">B U C H A</span>武茶</h1>
@@ -755,31 +860,11 @@
   <span class="footer-mark">B U C H A &nbsp; / &nbsp; 整いの一杯</span>
 </section>
 
-<!-- Slide 2: 結節コピー -->
+<!-- Slide 2 (v6): 痛み診断 — 冒頭2枚目に移動 -->
 <section class="slide">
+  <span class="chapter-tag">❶ 痛み</span>
   <span class="slide-num">02 / 19</span>
-  <h2 class="t"><span class="en">CORE THESIS</span>サプリは"対処"、整い茶は"設計"。</h2>
-  <p class="lead">
-    足りない栄養を足すこと(サプリ)は、症状への対処です。<br>
-    一日と暮らしの「整い方」そのものを再設計すること——それが、整い茶という選択です。
-  </p>
-  <div class="quote">
-    集中とリラックスは、対立する状態ではない。<br>
-    両方が同時に立ち上がっているとき、人は最もよく考え、最もよく感じ、最もよく決められる。
-    <cite>— BUCHA Brand Note</cite>
-  </div>
-  <p class="lead" style="margin-top:24px;">
-    過剰なカフェインで体を叩き起こす朝から、<br>
-    一杯の整い茶で自分の機嫌を整える朝へ。<br>
-    武茶は、その小さな転換点をつくります。
-  </p>
-  <span class="footer-mark">B U C H A</span>
-</section>
-
-<!-- Slide 3: コンプレックス痛み診断 -->
-<section class="slide">
-  <span class="slide-num">03 / 19</span>
-  <h2 class="t"><span class="en">SELF-CHECK</span>こんな自分に、心当たりはありませんか。</h2>
+  <h2 class="t"><span class="en">SELF-CHECK</span>こんな悩み、ありませんか？</h2>
   <p class="lead">
     現代を生きる私たちが抱える「整わなさ」は、生活の片隅に積み重なります。<br>
     ひとつでも当てはまるなら、整い茶という選択肢を持つ価値があります。
@@ -800,9 +885,10 @@
   <span class="footer-mark">B U C H A</span>
 </section>
 
-<!-- Slide 4: カフェイン中毒のリアル -->
+<!-- Slide 3 (v6): カフェイン中毒のリアル -->
 <section class="slide dark">
-  <span class="slide-num">04 / 19</span>
+  <span class="chapter-tag">❶ 痛み</span>
+  <span class="slide-num">03 / 19</span>
   <h2 class="t"><span class="en">CAFFEINE REALITY</span>気づかぬうちに、依存している。</h2>
   <p class="lead" style="color:#d6c9a9;">
     朝の一杯、午後の眠気覚まし、夜の追い込み。<br>
@@ -863,9 +949,10 @@
   <span class="footer-mark">B U C H A</span>
 </section>
 
-<!-- Slide 5: 市販茶のリスク詳細 (Pesticide deep dive) -->
+<!-- Slide 4 (v6): 市販茶のリスク詳細 -->
 <section class="slide">
-  <span class="slide-num">05 / 19</span>
+  <span class="chapter-tag">❶ 痛み</span>
+  <span class="slide-num">04 / 19</span>
   <h2 class="t"><span class="en">PESTICIDE TRUTH</span>「お茶なら安心」とは、限らない。</h2>
   <p class="lead">
     コーヒーを控えてお茶に切り替える人は増えています。けれど、市販の緑茶の多くにも、見えにくい構造が指摘されています。<br>
@@ -943,118 +1030,10 @@
   <span class="footer-mark">B U C H A</span>
 </section>
 
-<!-- Slide 6: Coffee→Cha 置換ビジュアル + コーヒー好きへの配慮 -->
+<!-- Slide 5 (v6): 歴史エビデンス — コーヒー50年 vs お茶1000年 (前半5枚目に移動) -->
 <section class="slide">
-  <span class="slide-num">06 / 19</span>
-  <h2 class="t"><span class="en">FOR COFFEE LOVERS</span>コーヒーが、好きなあなたへ。</h2>
-
-  <div class="swap">
-    <div class="side before">
-      <div class="ttl">B E F O R E</div>
-      <!-- Coffee cup SVG -->
-      <svg viewBox="0 0 160 140" width="120" height="120" aria-label="coffee cup">
-        <path d="M30,40 L130,40 L120,110 Q120,125 105,125 L55,125 Q40,125 40,110 Z" fill="none" stroke="#1a1a1a" stroke-width="3"/>
-        <path d="M130,55 Q160,55 160,75 Q160,95 130,95" fill="none" stroke="#1a1a1a" stroke-width="3"/>
-        <path d="M55,25 Q60,15 65,25 Q70,15 75,25" fill="none" stroke="#c0392b" stroke-width="2" stroke-linecap="round"/>
-        <path d="M85,25 Q90,15 95,25 Q100,15 105,25" fill="none" stroke="#c0392b" stroke-width="2" stroke-linecap="round"/>
-        <ellipse cx="80" cy="42" rx="48" ry="6" fill="#3d2817"/>
-      </svg>
-      <h4>毎朝のコーヒー1杯</h4>
-      <p>覚醒スパイク・午後のクラッシュ・<br>追加の一杯・依存ループ。</p>
-    </div>
-    <div class="arrow">▶</div>
-    <div class="side after">
-      <div class="ttl">A F T E R</div>
-      <!-- Tea bowl SVG -->
-      <svg viewBox="0 0 160 140" width="120" height="120" aria-label="tea bowl">
-        <path d="M25,55 Q25,120 80,125 Q135,120 135,55 Z" fill="none" stroke="#3d5a3d" stroke-width="3"/>
-        <ellipse cx="80" cy="55" rx="55" ry="10" fill="#3d5a3d"/>
-        <ellipse cx="80" cy="55" rx="50" ry="7" fill="#6b8a6b"/>
-        <path d="M60,25 Q65,15 70,25 Q75,15 80,25" fill="none" stroke="#c9a961" stroke-width="2" stroke-linecap="round"/>
-        <path d="M85,30 Q90,20 95,30 Q100,20 105,30" fill="none" stroke="#c9a961" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <h4>整い茶 1杯への置き換え</h4>
-      <p>静かな覚醒・持続する集中・<br>夜の眠りまで整う一日へ。</p>
-    </div>
-  </div>
-
-  <div class="care-box" style="margin-top:32px;">
-    <p>「コーヒーが好きだから飲む」<br>——その気持ちは、大切にしてください。</p>
-    <p>完全にやめる必要は、ありません。<br>ただ、頻度を落とすこと。</p>
-    <p class="em">コーヒー1杯を、整い茶1杯に置き換えるだけで、体は驚くほど変わります。</p>
-    <p>オーガニックで摂る、カフェインとテアニンの黄金比。<br>それが、無理なく続く、本当のセルフケアです。</p>
-  </div>
-  <p class="lead" style="margin-top:24px;">
-    武茶は、コーヒーの敵ではありません。<br>
-    あなたの一日を支える選択肢を、ひとつ増やすための整いの一杯です。
-  </p>
-  <span class="footer-mark">B U C H A</span>
-</section>
-
-<!-- Slide 7: なぜカテゴリーキングがいなかったか -->
-<section class="slide">
-  <span class="slide-num">07 / 19</span>
-  <h2 class="t"><span class="en">WHY NO CATEGORY KING</span>なぜ「整い茶」のカテゴリーキングは、いなかったのか。</h2>
-  <p class="lead">
-    お茶も、L-テアニンも、機能性茶飲料も、市場には既に存在しています。<br>
-    けれど、「整い茶」という統合カテゴリを取りに行ったブランドは、これまで存在しませんでした。理由は3つの壁にあります。
-  </p>
-  <div class="wall">
-    <div class="w">
-      <h4>壁1: 薬機法の表現リスク</h4>
-      <p>「効く・治る・整える」は、薬機法・景品表示法の境界線が厳しい。多くのお茶メーカーが、機能性訴求を避けて成分・産地・伝統に逃げてきた構造があります。</p>
-    </div>
-    <div class="w">
-      <h4>壁2: 流通とコモディティ化</h4>
-      <p>緑茶=ペットボトル・茶葉=ティーバッグの流通設計は、価格競争に最適化されすぎていました。「高くても買いたい整い茶」を売る流通は、未開拓のままでした。</p>
-    </div>
-    <div class="w">
-      <h4>壁3: 教育コストの大きさ</h4>
-      <p>「カフェイン×テアニンの黄金比」「α波と認知」「ネオニコと子供の神経」——これらは説明に時間がかかり、量販店の棚POPでは伝えきれない情報でした。</p>
-    </div>
-    <div class="w brk">
-      <h4>突破策: 武茶の3つの設計</h4>
-      <p>① 表現は「整える/サポート/報告されている」レベルに統制。② D2C+サブスク+体験イベントで価値伝達。③ 月替わり香り・SKU 4種・パーソナル設計でストーリーを乗せる。</p>
-    </div>
-  </div>
-  <span class="footer-mark">B U C H A</span>
-</section>
-
-<!-- Slide 8: 整い茶とは -->
-<section class="slide">
-  <span class="slide-num">08 / 19</span>
-  <h2 class="t"><span class="en">WHAT IS TOTONOI-CHA</span>整い茶とは、何か。</h2>
-  <p class="copy small">
-    千年続いてきた、日本人の整え方。<br>
-    それを、現代の脳と暮らしに合わせて、再設計しました。
-  </p>
-  <div class="grid g3" style="margin-top:28px;">
-    <div class="card">
-      <div class="num">壱</div>
-      <h3>カフェインとテアニンの黄金比</h3>
-      <p>日本の伝統的なお茶には、カフェインとL-テアニンが共存しています。武茶はその比率を、現代人の集中とリラックスの両立に合わせて選定しています。</p>
-    </div>
-    <div class="card">
-      <div class="num">弐</div>
-      <h3>無農薬・契約農家・第三者検査</h3>
-      <p>「親が子供に出せるか」を判定基準に、無農薬で育てられた茶葉を契約農家から仕入れ、第三者機関で検査しています。</p>
-    </div>
-    <div class="card">
-      <div class="num">参</div>
-      <h3>シーンで選べる4種設計</h3>
-      <p>朝の集中、昼の切替、夜の鎮静、家族の常飲。シーンごとに最適化された4SKUで、一日と暮らしに自然に馴染みます。</p>
-    </div>
-  </div>
-  <p class="lead" style="margin-top:28px;">
-    強い覚醒で押し切るのではなく、整えて、引き出す。<br>
-    それが、整い茶という考え方です。
-  </p>
-  <span class="footer-mark">B U C H A</span>
-</section>
-
-<!-- Slide 9 (v5 NEW): 歴史エビデンス — コーヒーは50年、お茶は1000年 -->
-<section class="slide">
-  <span class="slide-num">09 / 19</span>
+  <span class="chapter-tag">❷ 歴史と原因</span>
+  <span class="slide-num">05 / 19</span>
   <h2 class="t"><span class="en">A THOUSAND YEARS vs FIFTY</span>日本人の身体は、どちらに作られたか。</h2>
 
   <p class="hist-headline">
@@ -1162,9 +1141,143 @@
   <span class="footer-mark">B U C H A</span>
 </section>
 
-<!-- Slide 10 (旧09): コア処方の中身を全部見せる + 円グラフ -->
+<!-- Slide 6 (v6): Coffee→Cha 置換ビジュアル + コーヒー好きへの配慮 -->
 <section class="slide">
-  <span class="slide-num">10 / 19</span>
+  <span class="chapter-tag">❷ 歴史と原因</span>
+  <span class="slide-num">06 / 19</span>
+  <h2 class="t"><span class="en">FOR COFFEE LOVERS</span>コーヒーが、好きなあなたへ。</h2>
+
+  <div class="swap">
+    <div class="side before">
+      <div class="ttl">B E F O R E</div>
+      <!-- Coffee cup SVG -->
+      <svg viewBox="0 0 160 140" width="120" height="120" aria-label="coffee cup">
+        <path d="M30,40 L130,40 L120,110 Q120,125 105,125 L55,125 Q40,125 40,110 Z" fill="none" stroke="#1a1a1a" stroke-width="3"/>
+        <path d="M130,55 Q160,55 160,75 Q160,95 130,95" fill="none" stroke="#1a1a1a" stroke-width="3"/>
+        <path d="M55,25 Q60,15 65,25 Q70,15 75,25" fill="none" stroke="#c0392b" stroke-width="2" stroke-linecap="round"/>
+        <path d="M85,25 Q90,15 95,25 Q100,15 105,25" fill="none" stroke="#c0392b" stroke-width="2" stroke-linecap="round"/>
+        <ellipse cx="80" cy="42" rx="48" ry="6" fill="#3d2817"/>
+      </svg>
+      <h4>毎朝のコーヒー1杯</h4>
+      <p>覚醒スパイク・午後のクラッシュ・<br>追加の一杯・依存ループ。</p>
+    </div>
+    <div class="arrow">▶</div>
+    <div class="side after">
+      <div class="ttl">A F T E R</div>
+      <!-- Tea bowl SVG -->
+      <svg viewBox="0 0 160 140" width="120" height="120" aria-label="tea bowl">
+        <path d="M25,55 Q25,120 80,125 Q135,120 135,55 Z" fill="none" stroke="#3d5a3d" stroke-width="3"/>
+        <ellipse cx="80" cy="55" rx="55" ry="10" fill="#3d5a3d"/>
+        <ellipse cx="80" cy="55" rx="50" ry="7" fill="#6b8a6b"/>
+        <path d="M60,25 Q65,15 70,25 Q75,15 80,25" fill="none" stroke="#c9a961" stroke-width="2" stroke-linecap="round"/>
+        <path d="M85,30 Q90,20 95,30 Q100,20 105,30" fill="none" stroke="#c9a961" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <h4>整い茶 1杯への置き換え</h4>
+      <p>静かな覚醒・持続する集中・<br>夜の眠りまで整う一日へ。</p>
+    </div>
+  </div>
+
+  <div class="care-box" style="margin-top:32px;">
+    <p>「コーヒーが好きだから飲む」<br>——その気持ちは、大切にしてください。</p>
+    <p>完全にやめる必要は、ありません。<br>ただ、頻度を落とすこと。</p>
+    <p class="em">コーヒー1杯を、整い茶1杯に置き換えるだけで、体は驚くほど変わります。</p>
+    <p>オーガニックで摂る、カフェインとテアニンの黄金比。<br>それが、無理なく続く、本当のセルフケアです。</p>
+  </div>
+  <p class="lead" style="margin-top:24px;">
+    武茶は、コーヒーの敵ではありません。<br>
+    あなたの一日を支える選択肢を、ひとつ増やすための整いの一杯です。
+  </p>
+  <span class="footer-mark">B U C H A</span>
+</section>
+
+<!-- Slide 7 (v6): 整い茶とは — 章Ⅱの末尾 -->
+<section class="slide">
+  <span class="chapter-tag">❷ 歴史と原因</span>
+  <span class="slide-num">07 / 19</span>
+  <h2 class="t"><span class="en">WHAT IS TOTONOI-CHA</span>整い茶とは、何か。</h2>
+  <p class="copy small">
+    千年続いてきた、日本人の整え方。<br>
+    それを、現代の脳と暮らしに合わせて、再設計しました。
+  </p>
+  <div class="grid g3" style="margin-top:28px;">
+    <div class="card">
+      <div class="num">壱</div>
+      <h3>カフェインとテアニンの黄金比</h3>
+      <p>日本の伝統的なお茶には、カフェインとL-テアニンが共存しています。武茶はその比率を、現代人の集中とリラックスの両立に合わせて選定しています。</p>
+    </div>
+    <div class="card">
+      <div class="num">弐</div>
+      <h3>無農薬・契約農家・第三者検査</h3>
+      <p>「親が子供に出せるか」を判定基準に、無農薬で育てられた茶葉を契約農家から仕入れ、第三者機関で検査しています。</p>
+    </div>
+    <div class="card">
+      <div class="num">参</div>
+      <h3>シーンで選べる4種設計</h3>
+      <p>朝の集中、昼の切替、夜の鎮静、家族の常飲。シーンごとに最適化された4SKUで、一日と暮らしに自然に馴染みます。</p>
+    </div>
+  </div>
+  <p class="lead" style="margin-top:28px;">
+    強い覚醒で押し切るのではなく、整えて、引き出す。<br>
+    それが、整い茶という考え方です。
+  </p>
+  <span class="footer-mark">B U C H A</span>
+</section>
+
+<!-- Slide 8 (v6 NEW): BRAND CONCEPT — WHO-WHAT-HOW -->
+<section class="slide">
+  <span class="chapter-tag">❸ 解</span>
+  <span class="slide-num">08 / 19</span>
+  <h2 class="t"><span class="en">BRAND CONCEPT</span>武茶 -BUCHA- とは。</h2>
+  <p class="lead">
+    コーヒーや普段飲むものに代わる、毎日の整い茶。<br>
+    脳の潜在能力を最大化し、家族で常飲できる無農薬ブレンド——その全体像を、一枚に。
+  </p>
+
+  <div class="whw-grid">
+    <div class="whw who">
+      <div class="sym">◯</div>
+      <div class="head">WHO</div>
+      <div class="en">誰のために</div>
+      <ul>
+        <li>一流経営者・パフォーマー・士業</li>
+        <li>ADHD傾向・睡眠の浅さ・コーヒー依存に悩む人</li>
+        <li>家族の常飲を求める親(妊婦・授乳中・子供)</li>
+      </ul>
+    </div>
+    <div class="whw what">
+      <div class="sym">△</div>
+      <div class="head">WHAT</div>
+      <div class="en">何を</div>
+      <ul>
+        <li>4SKUの整い茶 + サブスク3段プラン</li>
+        <li>月替わり香りで紡ぐ、12ヶ月の物語</li>
+        <li>「人生を変える」5要素(同梱物・デジタル・体験イベント・コーチング・コンテンツ)</li>
+      </ul>
+    </div>
+    <div class="whw how">
+      <div class="sym">□</div>
+      <div class="head">HOW</div>
+      <div class="en">どう</div>
+      <ul>
+        <li>無農薬・第三者検査・契約農家</li>
+        <li>成分の完全透明化(コア処方を公開)</li>
+        <li>辻秀一 Doing/Being 思想の体現</li>
+        <li>サプリではなく、生活設計として届ける</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="lead" style="margin-top:28px;">
+    一行で言えば——「自分の機嫌を、自分で淹れる」。<br>
+    その一杯を、誰に・何で・どう届けるか。武茶の設計図を、隠さずに公開します。
+  </p>
+  <span class="footer-mark">B U C H A</span>
+</section>
+
+<!-- Slide 9 (v6): コア処方の中身を全部見せる + 円グラフ -->
+<section class="slide">
+  <span class="chapter-tag">❸ 解</span>
+  <span class="slide-num">09 / 19</span>
   <h2 class="t"><span class="en">CORE FORMULA</span>コア処方の中身を、全部見せます。</h2>
   <p class="lead">
     一杯1.5g。その中身を、隠さずに公開します。<br>
@@ -1228,72 +1341,10 @@
   <span class="footer-mark">B U C H A</span>
 </section>
 
-<!-- Slide 10: 月替わり香り12ヶ月 (Calendar) -->
+<!-- Slide 10 (v6): 4SKU 比較表 + ざっくりWHO-WHAT-HOW -->
 <section class="slide">
-  <span class="slide-num">11 / 19</span>
-  <h2 class="t"><span class="en">TWELVE MONTHS OF AROMA</span>一年を、12の香りで物語る。</h2>
-  <p class="lead">
-    同じ茶葉に、月ごとに変わる香りを重ねます。<br>
-    一年で一巡する、12のシーン。あなたの暮らしと季節が、毎月、少しずつ整っていきます。
-  </p>
-
-  <div class="calendar" aria-label="12 months aroma calendar">
-    <div class="cring"></div>
-    <!-- 12 months positioned around the circle -->
-    <div class="mon" style="transform:translate(0,-44%);">
-      <div class="m">睦月</div><div class="n">1月<br>若松・柚子</div>
-    </div>
-    <div class="mon" style="transform:translate(38%,-22%);">
-      <div class="m">如月</div><div class="n">2月<br>梅・蜜柑</div>
-    </div>
-    <div class="mon" style="transform:translate(38%,22%);">
-      <div class="m">弥生</div><div class="n">3月<br>桜・桃</div>
-    </div>
-    <div class="mon" style="transform:translate(0,44%);">
-      <div class="m">卯月</div><div class="n">4月<br>新緑・若葉</div>
-    </div>
-    <div class="mon" style="transform:translate(-38%,22%);">
-      <div class="m">皐月</div><div class="n">5月<br>菖蒲・薄荷</div>
-    </div>
-    <div class="mon" style="transform:translate(-38%,-22%);">
-      <div class="m">水無月</div><div class="n">6月<br>紫陽花・青葉</div>
-    </div>
-
-    <div class="mon" style="transform:translate(0,-44%) translateX(-160px);">
-      <div class="m">文月</div><div class="n">7月<br>蓮・薄荷</div>
-    </div>
-    <div class="mon" style="transform:translate(38%,-22%) translateX(-160px);">
-      <div class="m">葉月</div><div class="n">8月<br>白檀・紫蘇</div>
-    </div>
-    <div class="mon" style="transform:translate(38%,22%) translateX(-160px);">
-      <div class="m">長月</div><div class="n">9月<br>金木犀</div>
-    </div>
-    <div class="mon" style="transform:translate(0,44%) translateX(-160px);">
-      <div class="m">神無月</div><div class="n">10月<br>菊・栗</div>
-    </div>
-    <div class="mon" style="transform:translate(-38%,22%) translateX(-160px);">
-      <div class="m">霜月</div><div class="n">11月<br>柚子・檜</div>
-    </div>
-    <div class="mon" style="transform:translate(-38%,-22%) translateX(-160px);">
-      <div class="m">師走</div><div class="n">12月<br>沈香・松</div>
-    </div>
-
-    <div class="center">
-      <div class="y">十二月</div>
-      <div class="s">A &nbsp; Y E A R &nbsp; O F &nbsp; A R O M A</div>
-    </div>
-  </div>
-
-  <p class="lead" style="margin-top:28px;text-align:center;">
-    毎月、整い茶のパッケージを開けるたびに、季節が立ち上がる。<br>
-    日常の中に、小さな歳時記を取り戻す。
-  </p>
-  <span class="footer-mark">B U C H A</span>
-</section>
-
-<!-- Slide 11: 4SKU 比較表 -->
-<section class="slide">
-  <span class="slide-num">12 / 19</span>
+  <span class="chapter-tag">❸ 解</span>
+  <span class="slide-num">10 / 19</span>
   <h2 class="t"><span class="en">FOUR SKUS</span>四つの、整いの一杯。</h2>
   <p class="lead">一日と暮らしのシーンに合わせて、選べる4種。<br>同じ「整い茶」というブランドのもとに、役割の異なる4つの設計。</p>
 
@@ -1390,15 +1441,50 @@
   </table>
   </div>
 
+  <div class="skuwhw-wrap">
+    <div class="skuwhw-title">ざっくりWHO-WHAT-HOW</div>
+    <div class="skuwhw">
+      <div class="skuwhw-card">
+        <div class="sname">武 -TAKE-</div>
+        <div class="sro">T A K E</div>
+        <div class="row"><b>WHO</b><span>経営者・開発者・パフォーマー</span></div>
+        <div class="row"><b>WHAT</b><span>朝・会議前・午後の立て直しの一杯</span></div>
+        <div class="row"><b>HOW</b><span>一番茶玉露+抹茶+かぶせ茶 × L-テアニン200mg</span></div>
+      </div>
+      <div class="skuwhw-card">
+        <div class="sname">静 -SHIZUKA-</div>
+        <div class="sro">S H I Z U K A</div>
+        <div class="row"><b>WHO</b><span>不眠・更年期・ストレス過多</span></div>
+        <div class="row"><b>WHAT</b><span>夕方〜就寝前の整え</span></div>
+        <div class="row"><b>HOW</b><span>茎茶+玄米茶 × GABA + ラベンダー</span></div>
+      </div>
+      <div class="skuwhw-card">
+        <div class="sname">童 -WARABE-</div>
+        <div class="sro">W A R A B E</div>
+        <div class="row"><b>WHO</b><span>家族・妊婦・子供・授乳中</span></div>
+        <div class="row"><b>WHAT</b><span>いつでも家族で常飲・「叱る前の一杯」</span></div>
+        <div class="row"><b>HOW</b><span>無農薬麦茶+ノンカフェイン緑茶 × L-テアニン100mg</span></div>
+      </div>
+      <div class="skuwhw-card">
+        <div class="sname">道 -DOH-</div>
+        <div class="sro">D O H</div>
+        <div class="row"><b>WHO</b><span>整い習慣を始めたい人</span></div>
+        <div class="row"><b>WHAT</b><span>朝〜夜・バランス</span></div>
+        <div class="row"><b>HOW</b><span>4SKUのバランスブレンド</span></div>
+      </div>
+    </div>
+  </div>
+
   <p class="lead" style="margin-top:24px;">
     全SKU共通で、無農薬・契約農家・第三者検査の基準を満たした茶葉のみを使用しています。
   </p>
   <span class="footer-mark">B U C H A</span>
 </section>
 
-<!-- Slide 12: 童 -WARABE- 家族訴求 -->
+<!-- Slide 11 (v6): 童 -WARABE- 家族訴求 -->
 <section class="slide">
-  <span class="slide-num">13 / 19</span>
+  <span class="chapter-tag">❸ 解</span>
+  <span class="slide-num">11 / 19</span>
   <h2 class="t"><span class="en">FOR FAMILY &nbsp; / &nbsp; 童 W A R A B E</span>叱る前に、一杯。</h2>
 
   <div class="warabe-hero">
@@ -1484,9 +1570,54 @@
   <span class="footer-mark">B U C H A &nbsp; / &nbsp; 童 W A R A B E</span>
 </section>
 
-<!-- Slide 13: 人生を変える 5要素 -->
+<!-- Slide 12 (v6): 月替わり香り12ヶ月 — シンプル表に変更 -->
 <section class="slide">
-  <span class="slide-num">14 / 19</span>
+  <span class="chapter-tag">❸ 解</span>
+  <span class="slide-num">12 / 19</span>
+  <h2 class="t"><span class="en">TWELVE MONTHS OF AROMA</span>一年を、12の香りで物語る。</h2>
+  <p class="lead">
+    同じ茶葉に、月ごとに変わる香りを重ねます。<br>
+    一年で一巡する、12のシーン。あなたの暮らしと季節が、毎月、少しずつ整っていきます。
+  </p>
+
+  <div class="montbl-wrap">
+    <table class="montbl" aria-label="12 months aroma table">
+      <thead>
+        <tr>
+          <th>月</th>
+          <th>テーマ</th>
+          <th>ハイライト香り</th>
+          <th>コピー</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1月</td><td>整える元旦</td><td>熊野檜・柚子皮</td><td>一年の軸を、一服で立てる</td></tr>
+        <tr><td>2月</td><td>節分の浄め</td><td>山椒・梅花</td><td>鬼を払う、香で締める</td></tr>
+        <tr><td>3月</td><td>春のひらめき</td><td>桜葉・新茶香</td><td>閃きは、春の鼻先から</td></tr>
+        <tr><td>4月</td><td>目覚めの一服</td><td>八女一番茶 走り</td><td>今年最初の旨味を、独り占め</td></tr>
+        <tr><td>5月</td><td>五月晴れの集中</td><td>若葉・抹茶氷出し</td><td>視界をひらく、青の一杯</td></tr>
+        <tr><td>6月</td><td>梅雨の鎮静</td><td>紫陽花葉・青梅</td><td>曇天を、整える</td></tr>
+        <tr><td>7月</td><td>夏の清涼</td><td>和ミント・ジャスミン</td><td>氷の上で、頭を冷やす</td></tr>
+        <tr><td>8月</td><td>盛夏の活力</td><td>抹茶氷・レモングラス</td><td>灼ける日中の、戻る場所</td></tr>
+        <tr><td>9月</td><td>月見の静謐</td><td>金木犀・菊花</td><td>月の下で、自分に戻る</td></tr>
+        <tr><td>10月</td><td>秋の収穫</td><td>焙煎深煎り・栗</td><td>火の入った旨味で、腰を据える</td></tr>
+        <tr><td>11月</td><td>霜月の温活</td><td>生姜・シナモン</td><td>冷えを断つ、内側の火</td></tr>
+        <tr><td>12月</td><td>年末の浄化</td><td>柚子・檜・南天</td><td>一年を、湯気で流す</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="lead" style="margin-top:28px;text-align:center;">
+    毎月、整い茶のパッケージを開けるたびに、季節が立ち上がる。<br>
+    日常の中に、小さな歳時記を取り戻す。
+  </p>
+  <span class="footer-mark">B U C H A</span>
+</section>
+
+<!-- Slide 13 (v6): 人生を変える 5要素 -->
+<section class="slide">
+  <span class="chapter-tag">❹ 未来</span>
+  <span class="slide-num">13 / 19</span>
   <h2 class="t"><span class="en">FIVE ELEMENTS</span>「お茶」だけを売っているわけでは、ありません。</h2>
   <p class="lead">
     武茶のサブスクは、5つの要素を同梱して一つの体験にしています。<br>
@@ -1527,9 +1658,10 @@
   <span class="footer-mark">B U C H A</span>
 </section>
 
-<!-- Slide 14: 3つのベネフィット + Before→After -->
+<!-- Slide 14 (v6): 3つのベネフィット + Before→After -->
 <section class="slide">
-  <span class="slide-num">15 / 19</span>
+  <span class="chapter-tag">❹ 未来</span>
+  <span class="slide-num">14 / 19</span>
   <h2 class="t"><span class="en">THREE BENEFITS</span>整うと、3つが変わる。</h2>
   <p class="lead">体・脳・家族。<br>整い茶を一日の習慣にすることで、変わっていく3つの軸。</p>
   <div class="grid g3" style="margin-top:24px;">
@@ -1568,9 +1700,10 @@
   <span class="footer-mark">B U C H A</span>
 </section>
 
-<!-- Slide 15: 3ヶ月後の未来 -->
+<!-- Slide 15 (v6): 3ヶ月後の未来 -->
 <section class="slide">
-  <span class="slide-num">16 / 19</span>
+  <span class="chapter-tag">❹ 未来</span>
+  <span class="slide-num">15 / 19</span>
   <h2 class="t"><span class="en">YOUR 3 MONTHS LATER</span>あなたの、3ヶ月後の一日。</h2>
   <p class="lead">
     特別な努力をしなくていい。コーヒー1杯を整い茶1杯に置き換える、たったそれだけ。<br>
@@ -1641,8 +1774,31 @@
   <span class="footer-mark">B U C H A</span>
 </section>
 
-<!-- Slide 16: 3段プラン (Decoy) -->
+<!-- Slide 16 (v6): 結節コピー — サプリは対処、整い茶は設計 (後半に移動) -->
 <section class="slide">
+  <span class="chapter-tag">❺ 行動</span>
+  <span class="slide-num">16 / 19</span>
+  <h2 class="t"><span class="en">CORE THESIS</span>サプリは"対処"、整い茶は"設計"。</h2>
+  <p class="lead">
+    足りない栄養を足すこと(サプリ)は、症状への対処です。<br>
+    一日と暮らしの「整い方」そのものを再設計すること——それが、整い茶という選択です。
+  </p>
+  <div class="quote">
+    集中とリラックスは、対立する状態ではない。<br>
+    両方が同時に立ち上がっているとき、人は最もよく考え、最もよく感じ、最もよく決められる。
+    <cite>— BUCHA Brand Note</cite>
+  </div>
+  <p class="lead" style="margin-top:24px;">
+    過剰なカフェインで体を叩き起こす朝から、<br>
+    一杯の整い茶で自分の機嫌を整える朝へ。<br>
+    武茶は、その小さな転換点をつくります。
+  </p>
+  <span class="footer-mark">B U C H A</span>
+</section>
+
+<!-- Slide 17 (v6): 3段プラン (Decoy) -->
+<section class="slide">
+  <span class="chapter-tag">❺ 行動</span>
   <span class="slide-num">17 / 19</span>
   <h2 class="t"><span class="en">SUBSCRIPTION</span>はじめは、一杯から。続けるなら、本命を。</h2>
   <p class="lead">
@@ -1710,8 +1866,9 @@
   <span class="footer-mark">B U C H A</span>
 </section>
 
-<!-- Slide 17: 哲学 / 辻秀一先生 -->
+<!-- Slide 18 (v6): 哲学 / 辻秀一先生 -->
 <section class="slide">
+  <span class="chapter-tag">❺ 行動</span>
   <span class="slide-num">18 / 19</span>
   <h2 class="t"><span class="en">PHILOSOPHY</span>自分の機嫌は、自分で取る。</h2>
   <div class="quote">
@@ -1733,8 +1890,9 @@
   <span class="footer-mark">B U C H A</span>
 </section>
 
-<!-- Slide 18: クロージング -->
+<!-- Slide 19 (v6): クロージング -->
 <section class="slide dark">
+  <span class="chapter-tag">❺ 行動</span>
   <span class="slide-num">19 / 19</span>
   <div class="kicker" style="text-align:center;">B U C H A &nbsp; — &nbsp; T O T O N O I &nbsp; C H A</div>
   <p class="final-copy">自分の機嫌は、<br>自分で淹れる。</p>
