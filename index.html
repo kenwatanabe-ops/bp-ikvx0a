@@ -601,6 +601,134 @@
   .skutbl-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:24px}
   .skutbl-wrap .skutbl{margin-top:0;min-width:640px}
 
+  /* === v5 NEW STYLES (1000年 vs 50年 歴史エビデンス) === */
+  /* History headline cluster */
+  .hist-headline{
+    margin:28px 0 24px;
+    font-family:"Noto Serif JP",serif;font-weight:800;
+    font-size:54px;line-height:1.45;letter-spacing:.06em;color:var(--ink);
+  }
+  .hist-headline .leaf{color:var(--leaf)}
+  .hist-headline .red{color:var(--accent)}
+  .hist-sub{
+    font-family:"Noto Serif JP",serif;font-weight:600;
+    font-size:24px;color:var(--gold);letter-spacing:.08em;margin-bottom:24px;
+  }
+  @media (max-width:780px){
+    .hist-headline{font-size:30px}
+    .hist-sub{font-size:17px}
+  }
+
+  /* Two parallel timelines (tea vs coffee) */
+  .htl-wrap{
+    display:grid;grid-template-columns:1fr;gap:18px;margin-top:24px;
+  }
+  .htl{
+    background:#fff;border:1px solid var(--washi-d);border-radius:10px;
+    padding:28px 28px 24px;position:relative;
+  }
+  .htl.tea{border-left:5px solid var(--leaf);background:linear-gradient(180deg,#f3f7ec 0%,#fff 60%)}
+  .htl.coffee{border-left:5px solid var(--accent);background:linear-gradient(180deg,#1f1a18 0%,#2b2421 100%);color:#f0e8d6}
+  .htl .htl-head{
+    display:flex;align-items:baseline;justify-content:space-between;gap:14px;
+    margin-bottom:18px;flex-wrap:wrap;
+  }
+  .htl .htl-head h4{
+    font-family:"Noto Serif JP",serif;font-weight:800;font-size:24px;line-height:1.4;
+    letter-spacing:.04em;
+  }
+  .htl.tea h4{color:var(--leaf)}
+  .htl.coffee h4{color:#e6c46a}
+  .htl .span{
+    font-family:"Noto Serif JP",serif;font-size:14px;letter-spacing:.2em;font-weight:700;
+    padding:5px 14px;border-radius:99px;
+  }
+  .htl.tea .span{background:var(--leaf);color:#fff}
+  .htl.coffee .span{background:var(--accent);color:#fff}
+
+  /* Bar (visual contrast of duration) */
+  .htl-bar{
+    position:relative;height:14px;border-radius:99px;background:rgba(0,0,0,.05);
+    margin:10px 0 22px;overflow:hidden;
+  }
+  .htl.coffee .htl-bar{background:rgba(255,255,255,.08)}
+  .htl-bar .fill{
+    position:absolute;left:0;top:0;bottom:0;border-radius:99px;
+  }
+  .htl.tea .htl-bar .fill{background:linear-gradient(90deg,var(--leaf) 0%,var(--leaf-soft) 100%);width:100%}
+  .htl.coffee .htl-bar .fill{background:linear-gradient(90deg,var(--accent) 0%,#e07262 100%);width:5%}
+
+  /* Event rows inside each timeline */
+  .htl-events{display:grid;gap:10px}
+  .htl-events .ev{
+    display:grid;grid-template-columns:100px 1fr;gap:18px;align-items:start;
+    padding:10px 0;border-bottom:1px dashed rgba(0,0,0,.07);
+  }
+  .htl.coffee .htl-events .ev{border-bottom-color:rgba(255,255,255,.08)}
+  .htl-events .ev:last-child{border-bottom:none}
+  .htl-events .ev .yr{
+    font-family:"Noto Serif JP",serif;font-weight:800;font-size:16px;letter-spacing:.04em;line-height:1.4;
+  }
+  .htl.tea .ev .yr{color:var(--leaf)}
+  .htl.coffee .ev .yr{color:#e6c46a}
+  .htl-events .ev .ev-desc{
+    font-size:14.5px;line-height:1.85;
+  }
+  .htl.tea .ev .ev-desc{color:var(--ink-soft)}
+  .htl.coffee .ev .ev-desc{color:#d6c9a9}
+  .htl-events .ev .ev-desc b{font-weight:700}
+  .htl.tea .ev .ev-desc b{color:var(--leaf)}
+  .htl.coffee .ev .ev-desc b{color:#e6c46a}
+  @media (max-width:780px){
+    .htl{padding:22px 20px 18px}
+    .htl .htl-head h4{font-size:18px}
+    .htl-events .ev{grid-template-columns:1fr;gap:2px;padding:10px 0}
+    .htl-events .ev .yr{font-size:14px}
+    .htl-events .ev .ev-desc{font-size:13.5px}
+  }
+
+  /* Evidence callout (栄西/CYP1A2) */
+  .evi-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+  @media (max-width:780px){.evi-grid{grid-template-columns:1fr}}
+  .evi{
+    background:var(--washi-l);border:1px solid var(--washi-d);
+    border-left:4px solid var(--gold);
+    padding:24px 24px;border-radius:8px;
+  }
+  .evi h5{
+    font-family:"Noto Serif JP",serif;font-size:17px;color:var(--ink);
+    font-weight:800;margin-bottom:10px;line-height:1.55;
+  }
+  .evi p{font-size:14px;color:var(--ink-soft);line-height:1.95}
+  .evi .src{
+    display:inline-block;margin-top:10px;font-size:11px;color:var(--muted);
+    letter-spacing:.1em;
+  }
+  .evi .pct{
+    font-family:"Noto Serif JP",serif;font-size:42px;font-weight:800;
+    color:var(--accent);line-height:1;letter-spacing:.04em;
+  }
+  .evi .pct small{font-size:14px;color:var(--muted);margin-left:6px;font-weight:600}
+
+  /* Closing band (進化に50年は短すぎる) */
+  .hist-close{
+    margin-top:36px;background:var(--ink);color:var(--washi);
+    border-radius:10px;padding:36px 36px;text-align:center;
+  }
+  .hist-close .em{
+    font-family:"Noto Serif JP",serif;font-weight:800;
+    font-size:34px;line-height:1.55;letter-spacing:.08em;color:var(--gold);
+  }
+  .hist-close .body{
+    font-family:"Noto Serif JP",serif;font-size:17px;line-height:2;
+    color:#e6dcc1;margin-top:14px;letter-spacing:.04em;
+  }
+  @media (max-width:780px){
+    .hist-close{padding:26px 22px}
+    .hist-close .em{font-size:22px}
+    .hist-close .body{font-size:14px}
+  }
+
   /* Print */
   @media print{
     .slide{page-break-after:always;min-height:auto;padding:40px 24px;break-inside:avoid}
@@ -619,7 +747,7 @@
 
 <!-- Slide 1: タイトル -->
 <section class="slide">
-  <span class="slide-num">01 / 18</span>
+  <span class="slide-num">01 / 19</span>
   <div class="kicker">Brand of Calm Focus</div>
   <h1 class="brand"><span class="ruby">B U C H A</span>武茶</h1>
   <p class="copy">自分の機嫌は、<br>自分で淹れる。</p>
@@ -629,7 +757,7 @@
 
 <!-- Slide 2: 結節コピー -->
 <section class="slide">
-  <span class="slide-num">02 / 18</span>
+  <span class="slide-num">02 / 19</span>
   <h2 class="t"><span class="en">CORE THESIS</span>サプリは"対処"、整い茶は"設計"。</h2>
   <p class="lead">
     足りない栄養を足すこと(サプリ)は、症状への対処です。<br>
@@ -650,7 +778,7 @@
 
 <!-- Slide 3: コンプレックス痛み診断 -->
 <section class="slide">
-  <span class="slide-num">03 / 18</span>
+  <span class="slide-num">03 / 19</span>
   <h2 class="t"><span class="en">SELF-CHECK</span>こんな自分に、心当たりはありませんか。</h2>
   <p class="lead">
     現代を生きる私たちが抱える「整わなさ」は、生活の片隅に積み重なります。<br>
@@ -674,7 +802,7 @@
 
 <!-- Slide 4: カフェイン中毒のリアル -->
 <section class="slide dark">
-  <span class="slide-num">04 / 18</span>
+  <span class="slide-num">04 / 19</span>
   <h2 class="t"><span class="en">CAFFEINE REALITY</span>気づかぬうちに、依存している。</h2>
   <p class="lead" style="color:#d6c9a9;">
     朝の一杯、午後の眠気覚まし、夜の追い込み。<br>
@@ -737,7 +865,7 @@
 
 <!-- Slide 5: 市販茶のリスク詳細 (Pesticide deep dive) -->
 <section class="slide">
-  <span class="slide-num">05 / 18</span>
+  <span class="slide-num">05 / 19</span>
   <h2 class="t"><span class="en">PESTICIDE TRUTH</span>「お茶なら安心」とは、限らない。</h2>
   <p class="lead">
     コーヒーを控えてお茶に切り替える人は増えています。けれど、市販の緑茶の多くにも、見えにくい構造が指摘されています。<br>
@@ -817,7 +945,7 @@
 
 <!-- Slide 6: Coffee→Cha 置換ビジュアル + コーヒー好きへの配慮 -->
 <section class="slide">
-  <span class="slide-num">06 / 18</span>
+  <span class="slide-num">06 / 19</span>
   <h2 class="t"><span class="en">FOR COFFEE LOVERS</span>コーヒーが、好きなあなたへ。</h2>
 
   <div class="swap">
@@ -865,7 +993,7 @@
 
 <!-- Slide 7: なぜカテゴリーキングがいなかったか -->
 <section class="slide">
-  <span class="slide-num">07 / 18</span>
+  <span class="slide-num">07 / 19</span>
   <h2 class="t"><span class="en">WHY NO CATEGORY KING</span>なぜ「整い茶」のカテゴリーキングは、いなかったのか。</h2>
   <p class="lead">
     お茶も、L-テアニンも、機能性茶飲料も、市場には既に存在しています。<br>
@@ -894,7 +1022,7 @@
 
 <!-- Slide 8: 整い茶とは -->
 <section class="slide">
-  <span class="slide-num">08 / 18</span>
+  <span class="slide-num">08 / 19</span>
   <h2 class="t"><span class="en">WHAT IS TOTONOI-CHA</span>整い茶とは、何か。</h2>
   <p class="copy small">
     千年続いてきた、日本人の整え方。<br>
@@ -924,9 +1052,119 @@
   <span class="footer-mark">B U C H A</span>
 </section>
 
-<!-- Slide 9: コア処方の中身を全部見せる + 円グラフ -->
+<!-- Slide 9 (v5 NEW): 歴史エビデンス — コーヒーは50年、お茶は1000年 -->
 <section class="slide">
-  <span class="slide-num">09 / 18</span>
+  <span class="slide-num">09 / 19</span>
+  <h2 class="t"><span class="en">A THOUSAND YEARS vs FIFTY</span>日本人の身体は、どちらに作られたか。</h2>
+
+  <p class="hist-headline">
+    コーヒーは<span class="red">50年</span>。<br>
+    お茶は<span class="leaf">1000年</span>。
+  </p>
+  <p class="hist-sub">— 進化に、50年は短すぎる。</p>
+
+  <div class="htl-wrap">
+    <!-- Tea timeline -->
+    <div class="htl tea">
+      <div class="htl-head">
+        <h4>🍵 お茶の歴史 — 1000年以上</h4>
+        <span class="span">815 — 2026</span>
+      </div>
+      <div class="htl-bar"><div class="fill"></div></div>
+      <div class="htl-events">
+        <div class="ev">
+          <div class="yr">815年</div>
+          <div class="ev-desc"><b>嵯峨天皇への献茶</b>。『日本後紀』に記された日本最古の喫茶記録。</div>
+        </div>
+        <div class="ev">
+          <div class="yr">1211年</div>
+          <div class="ev-desc">栄西、<b>『喫茶養生記』</b>を著す。「茶は養生の仙薬なり、延齢の妙術なり」。</div>
+        </div>
+        <div class="ev">
+          <div class="yr">1300年代</div>
+          <div class="ev-desc"><b>茶禅一味</b>。禅僧が瞑想の前に。武将が戦の前に。集中をお茶で整えた。</div>
+        </div>
+        <div class="ev">
+          <div class="yr">1500年代</div>
+          <div class="ev-desc">千利休、<b>茶道</b>を完成させる。「一服」が、日本人の作法になる。</div>
+        </div>
+        <div class="ev">
+          <div class="yr">1700年代</div>
+          <div class="ev-desc">町人・庶民にまで普及。<b>毎日の一杯が、暮らしの所作になる。</b></div>
+        </div>
+        <div class="ev">
+          <div class="yr">— 〜 —</div>
+          <div class="ev-desc"><b>30世代以上</b>、日本人の身体がお茶に適応してきた。</div>
+        </div>
+        <div class="ev">
+          <div class="yr">2026年</div>
+          <div class="ev-desc"><b>あなたの一杯。</b></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Coffee timeline -->
+    <div class="htl coffee">
+      <div class="htl-head">
+        <h4>☕ コーヒーの歴史 — 日本では約50年</h4>
+        <span class="span">1960s — 2026</span>
+      </div>
+      <div class="htl-bar"><div class="fill"></div></div>
+      <div class="htl-events">
+        <div class="ev">
+          <div class="yr">1960年代</div>
+          <div class="ev-desc">インスタントコーヒーが普及。家庭に「カフェイン依存」の入口ができる。</div>
+        </div>
+        <div class="ev">
+          <div class="yr">1980年代</div>
+          <div class="ev-desc">缶コーヒー文化。<b>「眠気覚まし」として日常化。</b></div>
+        </div>
+        <div class="ev">
+          <div class="yr">1996年</div>
+          <div class="ev-desc">スターバックス日本上陸。第二の波。</div>
+        </div>
+        <div class="ev">
+          <div class="yr">2010年代</div>
+          <div class="ev-desc">スペシャルティ / 第三の波。<b>「飲まないと頭が動かない」が当たり前に。</b></div>
+        </div>
+        <div class="ev">
+          <div class="yr">2026年</div>
+          <div class="ev-desc"><b>あなたの依存。</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Evidence callouts -->
+  <div class="evi-grid">
+    <div class="evi">
+      <h5>栄西『喫茶養生記』(1211年)</h5>
+      <p>鎌倉時代、日本最古の茶の養生書。「<b>茶は養生の仙薬なり、延齢の妙術なり</b>」。禅僧は瞑想の前に、武将は戦の前に、僧侶や庶民まで——1000年、日本人の集中はお茶が支えてきた。</p>
+      <span class="src">— 栄西 / 1211 / 鎌倉</span>
+    </div>
+    <div class="evi">
+      <h5>遺伝子は、急に書き換わらない。</h5>
+      <p>日本人の<b>カフェイン代謝遺伝子 CYP1A2 slow型は約</b><span class="pct">40%<small>(日本人)</small></span><br>
+      = コーヒーに遺伝子的に適応しきれていない。食文化・腸内環境・代謝酵素は、数世代では大きく変化しない。</p>
+      <span class="src">— 集団遺伝学・薬物代謝学の知見</span>
+    </div>
+  </div>
+
+  <div class="hist-close">
+    <p class="em">「禅僧が瞑想前に。武将が戦の前に。」<br>1000年、日本人の集中はお茶が支えてきた。</p>
+    <p class="body">
+      あなたの祖父の祖父の祖父も、毎朝お茶を飲んでいた。<br>
+      遺伝子は、急に書き換わらない。— 身体に問うてみる。あなたが飲むべきは、どちらか。
+    </p>
+  </div>
+
+  <p class="note-source">※歴史的記述は『日本後紀』『喫茶養生記』および茶史の通説に基づく。CYP1A2 slow型の頻度は集団遺伝学研究の参考値。</p>
+  <span class="footer-mark">B U C H A</span>
+</section>
+
+<!-- Slide 10 (旧09): コア処方の中身を全部見せる + 円グラフ -->
+<section class="slide">
+  <span class="slide-num">10 / 19</span>
   <h2 class="t"><span class="en">CORE FORMULA</span>コア処方の中身を、全部見せます。</h2>
   <p class="lead">
     一杯1.5g。その中身を、隠さずに公開します。<br>
@@ -992,7 +1230,7 @@
 
 <!-- Slide 10: 月替わり香り12ヶ月 (Calendar) -->
 <section class="slide">
-  <span class="slide-num">10 / 18</span>
+  <span class="slide-num">11 / 19</span>
   <h2 class="t"><span class="en">TWELVE MONTHS OF AROMA</span>一年を、12の香りで物語る。</h2>
   <p class="lead">
     同じ茶葉に、月ごとに変わる香りを重ねます。<br>
@@ -1055,7 +1293,7 @@
 
 <!-- Slide 11: 4SKU 比較表 -->
 <section class="slide">
-  <span class="slide-num">11 / 18</span>
+  <span class="slide-num">12 / 19</span>
   <h2 class="t"><span class="en">FOUR SKUS</span>四つの、整いの一杯。</h2>
   <p class="lead">一日と暮らしのシーンに合わせて、選べる4種。<br>同じ「整い茶」というブランドのもとに、役割の異なる4つの設計。</p>
 
@@ -1160,7 +1398,7 @@
 
 <!-- Slide 12: 童 -WARABE- 家族訴求 -->
 <section class="slide">
-  <span class="slide-num">12 / 18</span>
+  <span class="slide-num">13 / 19</span>
   <h2 class="t"><span class="en">FOR FAMILY &nbsp; / &nbsp; 童 W A R A B E</span>叱る前に、一杯。</h2>
 
   <div class="warabe-hero">
@@ -1248,7 +1486,7 @@
 
 <!-- Slide 13: 人生を変える 5要素 -->
 <section class="slide">
-  <span class="slide-num">13 / 18</span>
+  <span class="slide-num">14 / 19</span>
   <h2 class="t"><span class="en">FIVE ELEMENTS</span>「お茶」だけを売っているわけでは、ありません。</h2>
   <p class="lead">
     武茶のサブスクは、5つの要素を同梱して一つの体験にしています。<br>
@@ -1291,7 +1529,7 @@
 
 <!-- Slide 14: 3つのベネフィット + Before→After -->
 <section class="slide">
-  <span class="slide-num">14 / 18</span>
+  <span class="slide-num">15 / 19</span>
   <h2 class="t"><span class="en">THREE BENEFITS</span>整うと、3つが変わる。</h2>
   <p class="lead">体・脳・家族。<br>整い茶を一日の習慣にすることで、変わっていく3つの軸。</p>
   <div class="grid g3" style="margin-top:24px;">
@@ -1332,7 +1570,7 @@
 
 <!-- Slide 15: 3ヶ月後の未来 -->
 <section class="slide">
-  <span class="slide-num">15 / 18</span>
+  <span class="slide-num">16 / 19</span>
   <h2 class="t"><span class="en">YOUR 3 MONTHS LATER</span>あなたの、3ヶ月後の一日。</h2>
   <p class="lead">
     特別な努力をしなくていい。コーヒー1杯を整い茶1杯に置き換える、たったそれだけ。<br>
@@ -1405,7 +1643,7 @@
 
 <!-- Slide 16: 3段プラン (Decoy) -->
 <section class="slide">
-  <span class="slide-num">16 / 18</span>
+  <span class="slide-num">17 / 19</span>
   <h2 class="t"><span class="en">SUBSCRIPTION</span>はじめは、一杯から。続けるなら、本命を。</h2>
   <p class="lead">
     全プラン共通の入り口は<b style="color:var(--accent);">初回980円</b>(任意プラン選んで2回目から定価)。<br>
@@ -1474,7 +1712,7 @@
 
 <!-- Slide 17: 哲学 / 辻秀一先生 -->
 <section class="slide">
-  <span class="slide-num">17 / 18</span>
+  <span class="slide-num">18 / 19</span>
   <h2 class="t"><span class="en">PHILOSOPHY</span>自分の機嫌は、自分で取る。</h2>
   <div class="quote">
     人は、何が起きるか(Doing)ではなく、<br>
@@ -1497,7 +1735,7 @@
 
 <!-- Slide 18: クロージング -->
 <section class="slide dark">
-  <span class="slide-num">18 / 18</span>
+  <span class="slide-num">19 / 19</span>
   <div class="kicker" style="text-align:center;">B U C H A &nbsp; — &nbsp; T O T O N O I &nbsp; C H A</div>
   <p class="final-copy">自分の機嫌は、<br>自分で淹れる。</p>
   <p class="final-sub">脳の潜在能力を最大化する、整い茶。</p>
