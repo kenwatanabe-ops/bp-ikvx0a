@@ -91,20 +91,26 @@
   @media (max-width:780px){
     .g2,.g3,.g4{grid-template-columns:1fr}
     h1.brand{font-size:72px;letter-spacing:.04em}
-    h2.t{font-size:26px;padding-left:14px;border-left-width:4px}
+    h2.t{font-size:26px;padding-left:14px;border-left-width:4px;margin-top:8px}
     .copy{font-size:26px;line-height:1.7}
     .copy.sub{font-size:18px}
     .copy.small{font-size:22px}
-    .slide{padding:56px 22px 64px}
+    .slide{padding:84px 22px 64px}
+    .slide-num{top:20px;right:22px;font-size:11px;letter-spacing:.22em}
+    .chapter-tag{top:20px;left:22px;font-size:10px;letter-spacing:.22em}
+    .footer-mark{bottom:18px;right:22px;font-size:10px}
     .lead{font-size:15.5px;line-height:1.95}
     .quote{font-size:17px;padding-left:18px}
   }
   @media (max-width:420px){
     h1.brand{font-size:56px;letter-spacing:.02em}
-    h2.t{font-size:22px}
+    h2.t{font-size:22px;margin-top:6px}
     .copy{font-size:22px}
-    .slide{padding:44px 18px 52px}
+    .slide{padding:76px 18px 56px}
+    .slide-num{top:18px;right:18px;font-size:10px}
+    .chapter-tag{top:18px;left:18px;font-size:10px}
     h1.brand .ruby{font-size:14px;letter-spacing:.4em;margin-bottom:14px}
+    h2.t .en{font-size:10px;letter-spacing:.32em;margin-bottom:8px}
   }
   .card{
     background:#fff;border:1px solid var(--washi-d);border-radius:8px;
@@ -445,9 +451,14 @@
   .swap .side p{font-size:13px;color:var(--muted);line-height:1.85}
   .swap .arrow{
     font-family:"Noto Serif JP",serif;font-size:48px;color:var(--gold);font-weight:800;
-    line-height:1;
+    line-height:1;display:flex;align-items:center;justify-content:center;
   }
-  @media (max-width:780px){.swap .arrow{transform:rotate(90deg)}}
+  @media (max-width:780px){
+    .swap{gap:8px;align-items:start}
+    .swap .arrow{display:none}
+    .swap .side{padding:18px 8px;border-top:1px solid var(--washi-d)}
+    .swap .side.before{border-top:none}
+  }
   .swap .side.after .ttl{color:var(--gold)}
   .swap .side.after h4{color:var(--leaf)}
 
