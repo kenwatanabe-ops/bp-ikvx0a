@@ -80,6 +80,14 @@
   .g2{grid-template-columns:repeat(2,1fr)}
   .g3{grid-template-columns:repeat(3,1fr)}
   .g4{grid-template-columns:repeat(4,1fr)}
+  /* Grid items: allow shrinking below content minimum (fixes Japanese keep-all overflow) */
+  .grid > *, .whw-grid > *, .pest-grid > *, .five > *, .g4-scene > *,
+  .skuwhw > *, .plans > *, .concept-wrap > *, .evi-grid > *, .htl-wrap > *{min-width:0}
+  /* Allow Japanese to wrap (relax keep-all in narrow contexts) */
+  .card p, .stat .l, .stat .note, .pest-card p, .scene p, .benefit p,
+  .whw ul li, .five .e p, .wall .w p, .swap .side p, .check-list li,
+  .skuwhw-card .row, .formula-block ul.fblist .nm small, .htl-events .ev .ev-desc,
+  .concept-3row .row span, .sku-spec .spec-row span, .lead, .quote{word-break:normal;line-break:auto}
   @media (max-width:780px){
     .g2,.g3,.g4{grid-template-columns:1fr}
     h1.brand{font-size:72px;letter-spacing:.04em}
@@ -92,10 +100,11 @@
     .quote{font-size:17px;padding-left:18px}
   }
   @media (max-width:420px){
-    h1.brand{font-size:56px}
+    h1.brand{font-size:56px;letter-spacing:.02em}
     h2.t{font-size:22px}
     .copy{font-size:22px}
     .slide{padding:44px 18px 52px}
+    h1.brand .ruby{font-size:14px;letter-spacing:.4em;margin-bottom:14px}
   }
   .card{
     background:#fff;border:1px solid var(--washi-d);border-radius:8px;
