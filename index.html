@@ -5,619 +5,585 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
 <meta name="googlebot" content="noindex,nofollow">
-<title>武茶 -BUCHA- 事業計画 簡易版</title>
+<title>武茶 -BUCHA- / 自分の機嫌は、自分で淹れる。</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#1a1a1a;
+    --ink-soft:#2b2620;
     --washi:#f5efe0;
     --washi-d:#ede4cc;
+    --washi-l:#faf6ea;
     --gold:#c9a961;
     --leaf:#3d5a3d;
+    --leaf-l:#6b8a6b;
     --accent:#c0392b;
     --muted:#6b6155;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html,body{background:var(--washi);color:var(--ink);font-family:"Zen Kaku Gothic New",sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+  html,body{background:var(--washi);color:var(--ink);font-family:"Zen Kaku Gothic New",sans-serif;line-height:1.85;-webkit-font-smoothing:antialiased}
   body{padding:0}
   .deck{max-width:1180px;margin:0 auto;padding:0 24px}
   .slide{
     background:var(--washi);
     border-bottom:1px solid var(--washi-d);
-    padding:64px 56px 72px;
-    min-height:92vh;
+    padding:96px 56px 104px;
+    min-height:96vh;
     position:relative;
-    page-break-after:always;
+    display:flex;flex-direction:column;justify-content:center;
   }
+  .slide.dark{background:var(--ink);color:var(--washi)}
+  .slide.dark .lead{color:#d6c9a9}
+  .slide.dark h2.t{color:var(--washi)}
+  .slide.dark .copy{color:var(--washi)}
+  .slide.dark .muted{color:#bdb39b}
   .slide::before{
-    content:"";position:absolute;left:0;top:0;width:6px;height:100%;
+    content:"";position:absolute;left:0;top:0;width:5px;height:100%;
     background:linear-gradient(180deg,var(--gold),var(--leaf));
   }
   .slide-num{
-    position:absolute;top:28px;right:36px;
-    font-family:"Noto Serif JP",serif;font-size:13px;color:var(--muted);letter-spacing:.18em;
+    position:absolute;top:32px;right:40px;
+    font-family:"Noto Serif JP",serif;font-size:12px;color:var(--muted);letter-spacing:.32em;
+  }
+  .slide.dark .slide-num{color:#9a8e72}
+  .kicker{
+    font-family:"Noto Serif JP",serif;font-size:13px;letter-spacing:.5em;
+    color:var(--gold);margin-bottom:22px;text-transform:uppercase;
   }
   h1.brand{
     font-family:"Noto Serif JP",serif;font-weight:800;
-    font-size:96px;letter-spacing:.08em;line-height:1.05;margin:64px 0 24px;
+    font-size:120px;letter-spacing:.08em;line-height:1.02;margin:24px 0 28px;
   }
-  h1.brand .ruby{display:block;font-size:22px;letter-spacing:.6em;color:var(--gold);margin-bottom:18px}
+  h1.brand .ruby{display:block;font-size:20px;letter-spacing:.7em;color:var(--gold);margin-bottom:24px;font-weight:600}
   h2.t{
     font-family:"Noto Serif JP",serif;font-weight:800;
-    font-size:38px;line-height:1.3;margin-bottom:8px;
-    border-left:6px solid var(--gold);padding-left:18px;
+    font-size:42px;line-height:1.35;margin-bottom:16px;
+    padding-left:20px;border-left:5px solid var(--gold);
   }
-  h2.t .en{display:block;font-size:12px;letter-spacing:.4em;color:var(--gold);margin-bottom:6px;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:500}
-  .lead{font-size:18px;color:var(--muted);margin:20px 0 36px;max-width:880px}
+  h2.t .en{display:block;font-size:11px;letter-spacing:.5em;color:var(--gold);margin-bottom:10px;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:500}
+  .lead{font-size:18px;color:var(--muted);margin:24px 0 40px;max-width:880px;line-height:2}
   .copy{
     font-family:"Noto Serif JP",serif;font-weight:600;
-    font-size:42px;line-height:1.6;letter-spacing:.06em;
-    margin:32px 0;color:var(--ink);
+    font-size:46px;line-height:1.6;letter-spacing:.06em;
+    margin:28px 0;color:var(--ink);
   }
+  .copy.sub{font-size:30px;color:var(--gold);font-weight:600;margin-top:0}
   .copy .accent{color:var(--accent)}
-  .stamp{
-    display:inline-block;border:2px solid var(--accent);color:var(--accent);
-    padding:6px 14px;font-family:"Noto Serif JP",serif;font-weight:600;font-size:14px;
-    letter-spacing:.3em;border-radius:2px;margin-top:24px;
-  }
-  .grid{display:grid;gap:20px}
+  .copy.small{font-size:30px}
+  .grid{display:grid;gap:22px}
   .g2{grid-template-columns:repeat(2,1fr)}
   .g3{grid-template-columns:repeat(3,1fr)}
   .g4{grid-template-columns:repeat(4,1fr)}
-  @media (max-width:780px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  @media (max-width:780px){
+    .g2,.g3,.g4{grid-template-columns:1fr}
+    h1.brand{font-size:72px}
+    h2.t{font-size:30px}
+    .copy{font-size:30px}
+    .copy.sub{font-size:22px}
+    .slide{padding:64px 28px 72px}
+  }
   .card{
-    background:#fff;border:1px solid var(--washi-d);border-radius:6px;
-    padding:24px;position:relative;
+    background:#fff;border:1px solid var(--washi-d);border-radius:8px;
+    padding:32px 28px;position:relative;
   }
-  .card .num{font-family:"Noto Serif JP",serif;color:var(--gold);font-size:32px;font-weight:800;line-height:1}
-  .card h3{font-family:"Noto Serif JP",serif;font-size:20px;margin:10px 0 10px;color:var(--ink)}
-  .card p{font-size:14.5px;color:var(--muted);line-height:1.75}
+  .card .num{font-family:"Noto Serif JP",serif;color:var(--gold);font-size:36px;font-weight:800;line-height:1}
+  .card h3{font-family:"Noto Serif JP",serif;font-size:22px;margin:12px 0 14px;color:var(--ink);font-weight:800}
+  .card p{font-size:15px;color:var(--muted);line-height:1.95}
   .stat{
-    background:var(--ink);color:var(--washi);padding:28px 24px;border-radius:6px;
+    background:var(--ink);color:var(--washi);padding:32px 28px;border-radius:8px;
   }
-  .stat .v{font-family:"Noto Serif JP",serif;font-size:44px;font-weight:800;color:var(--gold);line-height:1}
-  .stat .l{font-size:13px;letter-spacing:.15em;margin-top:10px;color:#d6c9a9}
-  table{width:100%;border-collapse:collapse;background:#fff;border-radius:6px;overflow:hidden;font-size:14px}
-  th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--washi-d)}
-  th{background:var(--ink);color:var(--washi);font-weight:600;letter-spacing:.08em;font-size:13px}
-  td.num{font-family:"Noto Serif JP",serif;color:var(--leaf);font-weight:700}
-  td.accent{color:var(--accent);font-weight:700}
-  .pill{display:inline-block;background:var(--leaf);color:#fff;padding:3px 10px;border-radius:99px;font-size:11px;letter-spacing:.1em}
+  .stat .v{font-family:"Noto Serif JP",serif;font-size:54px;font-weight:800;color:var(--gold);line-height:1}
+  .stat .l{font-size:13px;letter-spacing:.18em;margin-top:14px;color:#d6c9a9;line-height:1.7}
+  .stat .note{font-size:11px;color:#9a8e72;margin-top:10px;letter-spacing:.05em}
+  .pill{display:inline-block;background:var(--leaf);color:#fff;padding:5px 14px;border-radius:99px;font-size:11px;letter-spacing:.18em;font-weight:600}
   .pill.gold{background:var(--gold);color:var(--ink)}
   .pill.red{background:var(--accent)}
   .quote{
-    border-left:4px solid var(--leaf);padding:8px 0 8px 22px;
-    font-family:"Noto Serif JP",serif;font-style:normal;font-size:17px;color:var(--ink);margin:18px 0;
+    border-left:4px solid var(--gold);padding:14px 0 14px 28px;
+    font-family:"Noto Serif JP",serif;font-size:22px;color:var(--ink);margin:24px 0;
+    line-height:2;letter-spacing:.04em;
   }
-  .quote cite{display:block;margin-top:6px;font-size:12px;color:var(--muted);letter-spacing:.1em;font-style:normal}
-  .footer-mark{position:absolute;bottom:24px;right:36px;font-family:"Noto Serif JP",serif;font-size:11px;letter-spacing:.4em;color:var(--muted)}
+  .quote cite{display:block;margin-top:14px;font-size:12px;color:var(--muted);letter-spacing:.18em;font-style:normal;font-family:"Zen Kaku Gothic New",sans-serif}
+  .footer-mark{position:absolute;bottom:28px;right:40px;font-family:"Noto Serif JP",serif;font-size:11px;letter-spacing:.5em;color:var(--muted)}
+  .slide.dark .footer-mark{color:#9a8e72}
   .seal{
     display:inline-flex;align-items:center;justify-content:center;
-    width:72px;height:72px;border-radius:50%;
+    width:84px;height:84px;border-radius:50%;
     background:var(--accent);color:#fff;font-family:"Noto Serif JP",serif;
-    font-weight:800;font-size:24px;letter-spacing:0;transform:rotate(-8deg);
+    font-weight:800;font-size:26px;letter-spacing:0;transform:rotate(-8deg);
+    margin-top:24px;box-shadow:0 4px 16px rgba(192,57,43,.25);
   }
-  .kpi-row{display:flex;flex-wrap:wrap;gap:18px;margin:24px 0}
-  .kpi-row .stat{flex:1;min-width:200px}
-  .timeline{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:24px}
-  .timeline .step{background:#fff;border:1px solid var(--washi-d);border-top:4px solid var(--gold);padding:18px 14px;border-radius:4px;font-size:13px}
-  .timeline .step .w{font-family:"Noto Serif JP",serif;color:var(--accent);font-weight:700;letter-spacing:.1em;font-size:12px}
-  .timeline .step h4{font-size:14px;margin:6px 0 6px;color:var(--ink)}
-  @media (max-width:780px){.timeline{grid-template-columns:repeat(2,1fr)}}
-  ul.clean{list-style:none;padding:0}
-  ul.clean li{padding:10px 0 10px 26px;position:relative;font-size:15px;border-bottom:1px dashed var(--washi-d)}
-  ul.clean li::before{content:"・";position:absolute;left:6px;top:8px;color:var(--gold);font-weight:800;font-size:18px}
-  .pos-map{
-    background:#fff;border:1px solid var(--washi-d);border-radius:6px;padding:32px;
-    position:relative;height:380px;margin-top:18px;
+  .benefit{
+    background:#fff;border:1px solid var(--washi-d);border-radius:10px;
+    padding:40px 32px;position:relative;
   }
-  .axis-x,.axis-y{position:absolute;background:var(--ink)}
-  .axis-x{left:32px;right:32px;top:50%;height:2px}
-  .axis-y{top:32px;bottom:32px;left:50%;width:2px}
-  .lbl{position:absolute;font-size:11px;letter-spacing:.1em;color:var(--muted);font-weight:600}
-  .dot{position:absolute;background:var(--muted);color:#fff;border-radius:50%;width:64px;height:64px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;text-align:center;line-height:1.2;padding:6px}
-  .dot.us{background:var(--accent);width:80px;height:80px;font-size:13px;font-family:"Noto Serif JP",serif}
-  .badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-  .badge{background:var(--washi-d);padding:5px 12px;border-radius:4px;font-size:12px;color:var(--ink)}
-  @media print{
-    .slide{min-height:auto;padding:40px 36px;page-break-after:always}
-    body{background:#fff}
+  .benefit .icon{
+    font-family:"Noto Serif JP",serif;font-size:54px;color:var(--gold);
+    font-weight:800;line-height:1;margin-bottom:18px;
   }
+  .benefit h3{font-family:"Noto Serif JP",serif;font-size:26px;margin-bottom:16px;color:var(--ink);font-weight:800;line-height:1.5}
+  .benefit p{font-size:15px;color:var(--muted);line-height:2;margin-bottom:14px}
+  .benefit .ba{
+    margin-top:22px;padding-top:18px;border-top:1px dashed var(--washi-d);
+    font-size:13.5px;color:var(--ink-soft);line-height:1.9;
+  }
+  .benefit .ba b{color:var(--leaf);font-weight:700}
+  .benefit .future{
+    margin-top:18px;font-family:"Noto Serif JP",serif;font-size:17px;
+    color:var(--leaf);font-weight:600;line-height:1.8;
+  }
+  .product{
+    background:var(--washi-l);border:1px solid var(--washi-d);border-radius:10px;
+    padding:32px 26px;text-align:center;
+  }
+  .product .kanji{
+    font-family:"Noto Serif JP",serif;font-size:88px;font-weight:800;
+    color:var(--ink);line-height:1;margin-bottom:6px;letter-spacing:.04em;
+  }
+  .product .romaji{font-size:13px;letter-spacing:.4em;color:var(--gold);font-weight:600;margin-bottom:18px}
+  .product h3{font-family:"Noto Serif JP",serif;font-size:18px;margin-bottom:10px;color:var(--ink);font-weight:700}
+  .product p{font-size:13.5px;color:var(--muted);line-height:1.85}
+  .scene{
+    background:#fff;border:1px solid var(--washi-d);border-radius:10px;padding:36px 32px;
+  }
+  .scene .time{
+    font-family:"Noto Serif JP",serif;font-size:14px;letter-spacing:.4em;
+    color:var(--gold);font-weight:600;margin-bottom:14px;
+  }
+  .scene h3{font-family:"Noto Serif JP",serif;font-size:24px;margin-bottom:14px;color:var(--ink);font-weight:800;line-height:1.5}
+  .scene p{font-size:15px;color:var(--muted);line-height:2}
+  .care-box{
+    background:var(--washi-l);border:1px solid var(--washi-d);
+    border-left:5px solid var(--leaf);
+    padding:40px 36px;border-radius:8px;margin:28px 0;
+  }
+  .care-box p{font-size:18px;line-height:2.2;color:var(--ink-soft);margin-bottom:14px}
+  .care-box p:last-child{margin-bottom:0}
+  .care-box .em{font-family:"Noto Serif JP",serif;font-weight:600;color:var(--leaf);font-size:20px}
+  .risk-list{margin:20px 0 0}
+  .risk-list li{
+    list-style:none;padding:16px 0 16px 36px;border-bottom:1px solid var(--washi-d);
+    position:relative;font-size:16px;line-height:1.95;color:var(--ink-soft);
+  }
+  .risk-list li:last-child{border-bottom:none}
+  .risk-list li::before{
+    content:"";position:absolute;left:0;top:24px;width:20px;height:2px;background:var(--accent);
+  }
+  .risk-list li b{font-weight:700;color:var(--accent)}
+  .design-list{margin:24px 0 0;display:grid;gap:14px}
+  .design-list li{
+    list-style:none;padding:18px 24px;background:#fff;border:1px solid var(--washi-d);
+    border-radius:6px;font-size:15.5px;line-height:1.85;color:var(--ink-soft);
+  }
+  .design-list li b{font-family:"Noto Serif JP",serif;color:var(--leaf);font-weight:700;margin-right:8px}
+  .offer{
+    background:var(--ink);color:var(--washi);padding:56px 48px;border-radius:12px;
+    text-align:center;margin-top:24px;
+  }
+  .offer .price{
+    font-family:"Noto Serif JP",serif;font-size:84px;font-weight:800;
+    color:var(--gold);line-height:1;letter-spacing:.04em;
+  }
+  .offer .price small{font-size:24px;color:#d6c9a9;font-weight:600;margin-left:6px}
+  .offer .tag{font-size:14px;letter-spacing:.4em;color:#d6c9a9;margin-bottom:18px}
+  .offer h3{font-family:"Noto Serif JP",serif;font-size:30px;margin:24px 0 14px;color:var(--washi);font-weight:800}
+  .offer p{color:#d6c9a9;font-size:15px;line-height:2;max-width:640px;margin:0 auto}
+  .offer .features{
+    display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:28px;
+  }
+  .offer .features span{
+    background:rgba(201,169,97,.12);border:1px solid rgba(201,169,97,.4);
+    padding:8px 18px;border-radius:99px;font-size:13px;color:var(--gold);letter-spacing:.1em;
+  }
+  .final-copy{
+    font-family:"Noto Serif JP",serif;font-weight:800;
+    font-size:64px;line-height:1.5;letter-spacing:.08em;
+    text-align:center;margin:48px 0 24px;color:var(--washi);
+  }
+  .final-sub{
+    font-family:"Noto Serif JP",serif;font-size:24px;text-align:center;
+    color:var(--gold);letter-spacing:.2em;font-weight:600;
+  }
+  @media (max-width:780px){
+    .final-copy{font-size:38px}
+    .final-sub{font-size:16px}
+    .offer .price{font-size:56px}
+    h1.brand{letter-spacing:.04em}
+    .product .kanji{font-size:64px}
+  }
+  .note-source{
+    font-size:11px;color:var(--muted);letter-spacing:.08em;margin-top:20px;line-height:1.8;
+  }
+  .slide.dark .note-source{color:#9a8e72}
 </style>
 </head>
 <body>
 <div class="deck">
 
-<!-- ========== SLIDE 1: TITLE ========== -->
-<section class="slide" style="display:flex;flex-direction:column;justify-content:center">
-  <span class="slide-num">01 / 12</span>
-  <div style="max-width:900px">
-    <span style="font-family:'Noto Serif JP',serif;font-size:14px;letter-spacing:.5em;color:var(--gold)">D2C BRAND PLAN — 2026</span>
-    <h1 class="brand"><span class="ruby">B U C H A</span>武 茶</h1>
-    <div class="copy" style="font-size:48px;margin-top:48px">
-      自分の<span class="accent">機嫌</span>は、<br>自分で<span class="accent">淹れる</span>。
+<!-- Slide 1: タイトル -->
+<section class="slide">
+  <span class="slide-num">01 / 14</span>
+  <div class="kicker">Brand of Calm Focus</div>
+  <h1 class="brand"><span class="ruby">B U C H A</span>武茶</h1>
+  <p class="copy">自分の機嫌は、<br>自分で淹れる。</p>
+  <p class="copy sub">脳の潜在能力を最大化する、整い茶。</p>
+  <span class="footer-mark">B U C H A &nbsp; / &nbsp; 整いの一杯</span>
+</section>
+
+<!-- Slide 2: ブランドメッセージ -->
+<section class="slide">
+  <span class="slide-num">02 / 14</span>
+  <h2 class="t"><span class="en">BRAND MESSAGE</span>静かに、深く、冴えていく。</h2>
+  <p class="lead">
+    現代を生きる私たちは、絶え間ない通知と判断と感情の波に晒されている。<br>
+    必要なのは「もっと強い覚醒」ではなく、「揺れない自分」。<br>
+    武茶は、千年続いてきた日本のお茶を、現代の脳と暮らしに合わせて再設計した、整いの一杯です。
+  </p>
+  <div class="quote">
+    集中とリラックスは、対立する状態ではない。<br>
+    両方が同時に立ち上がっているとき、人は最もよく考え、最もよく感じ、最もよく決められる。
+    <cite>— BUCHA Brand Note</cite>
+  </div>
+  <p class="lead" style="margin-top:24px;">
+    過剰なカフェインで体を叩き起こす朝から、<br>
+    一杯の整い茶で自分の機嫌を整える朝へ。<br>
+    武茶は、その小さな転換点をつくります。
+  </p>
+  <span class="footer-mark">B U C H A</span>
+</section>
+
+<!-- Slide 3: 現代人の現実 -->
+<section class="slide">
+  <span class="slide-num">03 / 14</span>
+  <h2 class="t"><span class="en">THE REALITY</span>気づかぬうちに、依存している。</h2>
+  <p class="lead">
+    朝の一杯、午後の眠気覚まし、夜の追い込み。<br>
+    気づけば、コーヒーやエナジードリンクが手放せなくなっている。<br>
+    それは「習慣」ではなく、カフェインへの依存ループに入っているサインかもしれません。
+  </p>
+  <ul class="risk-list">
+    <li><b>カフェイン中毒の症状</b>として、不眠・動悸・不安感・パニック様の症状が報告されています。摂取をやめたときの離脱頭痛・倦怠感も特徴的とされています。</li>
+    <li>カフェインの<b>半減期は5〜7時間</b>と言われており、午後のコーヒー数杯でも、就寝時に体内へ残存しやすい構造があります。</li>
+    <li>市販コーヒー豆の<b>約67%からカビ毒(オクラトキシン)が検出された</b>とする研究報告もあり、無自覚のうちに毎日摂取しているリスクが指摘されています。</li>
+    <li>カフェイン × 砂糖 × カビ毒 の<b>三重負担</b>が、現代の慢性疲労・気分の浮き沈み・睡眠の浅さの一因と指摘する研究者もいます。</li>
+    <li>とくに<b>経営者・開発者・高ストレス職</b>ほど「眠気を上書きする飲み物」に頼りやすく、依存ループに入りやすい傾向があると言われています。</li>
+  </ul>
+  <p class="note-source">※医学的診断を行うものではなく、研究報告に基づく一般的傾向の記述です。</p>
+  <span class="footer-mark">B U C H A</span>
+</section>
+
+<!-- Slide 4: 数字で見る危険 -->
+<section class="slide dark">
+  <span class="slide-num">04 / 14</span>
+  <h2 class="t"><span class="en">BY THE NUMBERS</span>数字で見る、依存のリアル。</h2>
+  <p class="lead" style="color:#d6c9a9;">
+    日本人の体質と、市販飲料の中身。<br>
+    数字を並べると、見過ごせない構造が見えてきます。
+  </p>
+  <div class="grid g4" style="margin-top:24px;">
+    <div class="stat">
+      <div class="v">約40%</div>
+      <div class="l">日本人にカフェイン代謝が遅い遺伝子型(CYP1A2)が見られると報告</div>
+      <div class="note">遺伝子多型に関する研究より</div>
     </div>
-    <p class="lead" style="font-size:20px;margin-top:32px">
-      コーヒーや清涼飲料に代わる、毎日の「整え」を。<br>
-      家族で、安心して、常飲できる無農薬の和ハーブブレンド茶。
-    </p>
-    <div style="display:flex;gap:18px;align-items:center;margin-top:36px">
-      <div class="seal">武茶</div>
-      <div>
-        <div style="font-family:'Noto Serif JP',serif;font-size:13px;letter-spacing:.4em;color:var(--muted)">事業計画 簡易版</div>
-        <div style="font-size:14px;color:var(--muted);margin-top:4px">作成日: 2026-05-15 ／ 提出先: 王</div>
+    <div class="stat">
+      <div class="v">5–7h</div>
+      <div class="l">カフェインの半減期。午後の一杯が夜まで残ると言われる理由</div>
+      <div class="note">薬物動態の一般的な目安</div>
+    </div>
+    <div class="stat">
+      <div class="v">約67%</div>
+      <div class="l">市販コーヒー豆からカビ毒(オクラトキシン)が検出されたとする研究報告</div>
+      <div class="note">食品分析に関する報告より</div>
+    </div>
+    <div class="stat">
+      <div class="v">+砂糖</div>
+      <div class="l">甘いカフェイン飲料は血糖スパイクと依存ループを助長すると指摘されている</div>
+      <div class="note">行動科学・栄養学的な指摘</div>
+    </div>
+  </div>
+  <p class="note-source">※数値は各種研究・報告に基づく一般的な傾向であり、個人差があります。</p>
+  <span class="footer-mark">B U C H A</span>
+</section>
+
+<!-- Slide 5: 市販の茶も実は -->
+<section class="slide">
+  <span class="slide-num">05 / 14</span>
+  <h2 class="t"><span class="en">HIDDEN RISK</span>「お茶なら安心」とは、限らない。</h2>
+  <p class="lead">
+    コーヒーを控えてお茶に切り替える人は増えています。<br>
+    けれど、市販の緑茶の多くにも、見えにくいリスクがあると指摘されています。
+  </p>
+  <div class="grid g3" style="margin-top:20px;">
+    <div class="card">
+      <div class="num">9割</div>
+      <h3>ネオニコチノイド系農薬</h3>
+      <p>市販茶の多くで、ネオニコチノイド系農薬の残留が検出されたとする調査報告があります。茶葉は洗わず淹れるため、そのまま抽出される可能性が指摘されています。</p>
+    </div>
+    <div class="card">
+      <div class="num">×600</div>
+      <h3>EU基準との差</h3>
+      <p>日本の残留農薬基準値は、EUの基準と比べて最大数百倍ゆるい項目があると報告されています(品目・成分により異なる)。</p>
+    </div>
+    <div class="card">
+      <div class="num">複合</div>
+      <h3>香料・調整成分の積層</h3>
+      <p>ペットボトル茶では、抽出時の香味調整や酸化防止のための添加物が積み重なるケースもあり、純粋な「茶葉だけ」とは限らないとされています。</p>
+    </div>
+  </div>
+  <p class="lead" style="margin-top:28px;">
+    だからこそ武茶は、契約農家・無農薬・第三者検査を前提に、<br>
+    「親が子供に出せるお茶」だけを選んでいます。
+  </p>
+  <span class="footer-mark">B U C H A</span>
+</section>
+
+<!-- Slide 6: コーヒー好きへ -->
+<section class="slide">
+  <span class="slide-num">06 / 14</span>
+  <h2 class="t"><span class="en">FOR COFFEE LOVERS</span>コーヒーが、好きなあなたへ。</h2>
+  <div class="care-box">
+    <p>「コーヒーが好きだから飲む」<br>——その気持ちは、大切にしてください。</p>
+    <p>完全にやめる必要は、ありません。<br>ただ、頻度を落とすこと。</p>
+    <p class="em">コーヒー1杯を、整い茶1杯に置き換えるだけで、体は驚くほど変わります。</p>
+    <p>オーガニックで摂る、カフェインとテアニンの黄金比。<br>それが、無理なく続く、本当のセルフケアです。</p>
+  </div>
+  <p class="lead" style="margin-top:24px;">
+    武茶は、コーヒーの敵ではありません。<br>
+    あなたの一日を支える選択肢を、ひとつ増やすための整いの一杯です。
+  </p>
+  <span class="footer-mark">B U C H A</span>
+</section>
+
+<!-- Slide 7: 整い茶とは -->
+<section class="slide">
+  <span class="slide-num">07 / 14</span>
+  <h2 class="t"><span class="en">WHAT IS TOTONOI-CHA</span>整い茶とは、何か。</h2>
+  <p class="copy small">
+    千年続いてきた、日本人の整え方。<br>
+    それを、現代の脳と暮らしに合わせて、再設計しました。
+  </p>
+  <div class="grid g3" style="margin-top:28px;">
+    <div class="card">
+      <div class="num">壱</div>
+      <h3>カフェインとテアニンの黄金比</h3>
+      <p>日本の伝統的なお茶には、カフェインとL-テアニンが共存しています。武茶はその比率を、現代人の集中とリラックスの両立に合わせて選定しています。</p>
+    </div>
+    <div class="card">
+      <div class="num">弐</div>
+      <h3>無農薬・契約農家・第三者検査</h3>
+      <p>「親が子供に出せるか」を判定基準に、無農薬で育てられた茶葉を契約農家から仕入れ、第三者機関で検査しています。</p>
+    </div>
+    <div class="card">
+      <div class="num">参</div>
+      <h3>シーンで選べる4種設計</h3>
+      <p>朝の集中、昼の切替、夜の鎮静、家族の常飲。シーンごとに最適化された4SKUで、一日と暮らしに自然に馴染みます。</p>
+    </div>
+  </div>
+  <p class="lead" style="margin-top:28px;">
+    強い覚醒で押し切るのではなく、整えて、引き出す。<br>
+    それが、整い茶という考え方です。
+  </p>
+  <span class="footer-mark">B U C H A</span>
+</section>
+
+<!-- Slide 8: 哲学 / 辻秀一先生 -->
+<section class="slide">
+  <span class="slide-num">08 / 14</span>
+  <h2 class="t"><span class="en">PHILOSOPHY</span>自分の機嫌は、自分で取る。</h2>
+  <div class="quote">
+    人は、何が起きるか(Doing)ではなく、<br>
+    どう在るか(Being)で人生の質が決まる。<br>
+    自分の機嫌は、自分で取れる。
+    <cite>— スポーツドクター 辻秀一 先生の言葉より着想</cite>
+  </div>
+  <p class="lead" style="margin-top:20px;">
+    機嫌が良いから整うのではなく、<br>
+    整えるから、機嫌が整っていく。
+  </p>
+  <p class="lead">
+    武茶は、その「整える」を、一杯の習慣に落とし込みます。<br>
+    Doing(成果)を追う前に、Being(在り方)を整える。<br>
+    集中も、優しさも、決断も、その後から自然と立ち上がっていきます。
+  </p>
+  <p class="copy" style="margin-top:36px;">自分の機嫌は、<span class="accent">自分で淹れる。</span></p>
+  <span class="footer-mark">B U C H A</span>
+</section>
+
+<!-- Slide 9: 3つのベネフィット -->
+<section class="slide">
+  <span class="slide-num">09 / 14</span>
+  <h2 class="t"><span class="en">THREE BENEFITS</span>整うと、3つが変わる。</h2>
+  <p class="lead">体・脳・家族。<br>整い茶を一日の習慣にすることで、変わっていく3つの軸。</p>
+  <div class="grid g3" style="margin-top:24px;">
+    <div class="benefit">
+      <div class="icon">壱</div>
+      <h3>体の内側から、整う。</h3>
+      <p>抗酸化作用が報告されているカテキンを中心に、無農薬の茶葉で内側の負担を減らす設計。余分なカフェイン・カビ毒・砂糖から少しずつ離れていくことで、腸内環境や肌の調子にも変化が出やすいと言われています。</p>
+      <div class="ba">
+        <b>Before</b> 朝のコーヒー→胃の不快感→甘いものへの欲求。<br>
+        <b>After</b> 整い茶→穏やかな立ち上がり→食事の質まで整っていく。
       </div>
+      <div class="future">体が軽い朝が、当たり前になる。</div>
     </div>
-  </div>
-  <div class="footer-mark">武 茶 — B U C H A</div>
-</section>
-
-<!-- ========== SLIDE 2: EXECUTIVE SUMMARY ========== -->
-<section class="slide">
-  <span class="slide-num">02 / 12</span>
-  <h2 class="t"><span class="en">EXECUTIVE SUMMARY</span>エグゼクティブサマリー</h2>
-  <p class="lead">「常飲する整え茶」という空白市場を、家族で安心して飲める無農薬ブレンドで取りに行く。</p>
-
-  <div class="grid g2" style="margin-top:8px">
-    <div class="card">
-      <span class="num">01</span>
-      <h3>コンセプト</h3>
-      <p>コーヒー・市販茶・エナジードリンクに代わる、日々の状態を整える常飲茶。「自分の機嫌を自分で取る」ための日常装備。</p>
-    </div>
-    <div class="card">
-      <span class="num">02</span>
-      <h3>市場機会</h3>
-      <p>「無農薬 × 常飲 × 親子で安全 × カフェイン依存からの離脱」を同時に満たすD2Cブランドが日本に未確立。直接競合0社。</p>
-    </div>
-    <div class="card">
-      <span class="num">03</span>
-      <h3>初期投資</h3>
-      <p>300〜400万円（OEM・商標・検査・LP・初回広告）。5〜6週でローンチ可能。Phase0確定→P5公開までを内製で短期遂行。</p>
-    </div>
-    <div class="card">
-      <span class="num">04</span>
-      <h3>12ヶ月目線</h3>
-      <p>標準シナリオ（月300件・継続率55%）で <b>12ヶ月累計粗利 +85万円</b>。強気シナリオでは +500万円超。LTV型のため2年目から純利寄与が伸びる。</p>
-    </div>
-  </div>
-
-  <div class="kpi-row" style="margin-top:36px">
-    <div class="stat"><div class="v">4</div><div class="l">SKU LINE-UP</div></div>
-    <div class="stat"><div class="v">5-6週</div><div class="l">TO LAUNCH</div></div>
-    <div class="stat"><div class="v">¥4,980</div><div class="l">月額・継続価格(税込)</div></div>
-    <div class="stat"><div class="v">0社</div><div class="l">DIRECT COMPETITOR</div></div>
-  </div>
-  <div class="footer-mark">武 茶 — B U C H A</div>
-</section>
-
-<!-- ========== SLIDE 3: MARKET 1 — COFFEE PROBLEM ========== -->
-<section class="slide">
-  <span class="slide-num">03 / 12</span>
-  <h2 class="t"><span class="en">MARKET INSIGHT 01</span>コーヒー依存の不都合な現実</h2>
-  <p class="lead">「眠気覚まし」「集中力」と引き換えに、日本人の体は静かに削られている。</p>
-
-  <div class="grid g3">
-    <div class="card">
-      <span class="num">40<span style="font-size:18px">%</span></span>
-      <h3>カフェイン代謝が遅い日本人</h3>
-      <p>CYP1A2遺伝子型により日本人の約40%がカフェイン代謝が遅いタイプ。同量でも不眠・動悸・不安が出やすい体質。</p>
-    </div>
-    <div class="card">
-      <span class="num">67<span style="font-size:18px">%</span></span>
-      <h3>市販コーヒー豆のカビ汚染</h3>
-      <p>米国研究で市販コーヒー豆の約67%からマイコトキシン（カビ毒）を検出。長期摂取で慢性炎症リスク。</p>
-    </div>
-    <div class="card">
-      <span class="num">×</span>
-      <h3>砂糖 × カフェインの依存ループ</h3>
-      <p>カフェ・コンビニで広がる「砂糖+カフェイン」の組合せはドーパミン報酬系を強く刺激し、依存形成に寄与する。</p>
-    </div>
-  </div>
-
-  <div class="quote" style="margin-top:36px">
-    「眠気を消す」のではなく「眠くならない状態をつくる」。<br>
-    覚醒で削るのではなく、整えて伸ばす。これが常飲茶の役割。
-  </div>
-  <div class="footer-mark">武 茶 — B U C H A</div>
-</section>
-
-<!-- ========== SLIDE 4: MARKET 2 — TEA PROBLEM ========== -->
-<section class="slide">
-  <span class="slide-num">04 / 12</span>
-  <h2 class="t"><span class="en">MARKET INSIGHT 02</span>市販茶という、もう一つの落とし穴</h2>
-  <p class="lead">「健康的」と思って毎日飲んでいるそのお茶は、農薬基準上はEUの数百倍ゆるい。</p>
-
-  <div class="grid g2">
-    <div class="card">
-      <span class="num">9<span style="font-size:18px">割</span></span>
-      <h3>市販茶のネオニコ系農薬残留</h3>
-      <p>国内市販茶の約9割からネオニコチノイド系農薬が検出されたとの民間調査。神経系・発達への影響が国際的に議論されている成分。</p>
-    </div>
-    <div class="card">
-      <span class="num">×600</span>
-      <h3>日本の残留基準はEU比でゆるい</h3>
-      <p>茶に対するネオニコ系の残留基準値は、項目により日本がEUの数百倍まで許容される。「日本基準でOK」は安全の保証にならない。</p>
-    </div>
-    <div class="card">
-      <span class="num">0</span>
-      <h3>親子で常飲できる定番がない</h3>
-      <p>麦茶や緑茶では「子どもにそのまま」「妊娠中・授乳中も安心」を全部満たすブランドが存在しない。母親の意思決定の谷。</p>
-    </div>
-    <div class="card">
-      <span class="num">∞</span>
-      <h3>「日常の一杯」がブランド空白</h3>
-      <p>機能性ドリンクや薬膳茶は単発購入で終わる。<b>「毎日続けるための定番ポジション」</b>に強いD2Cが存在しない。</p>
-    </div>
-  </div>
-  <div class="footer-mark">武 茶 — B U C H A</div>
-</section>
-
-<!-- ========== SLIDE 5: BRAND PHILOSOPHY ========== -->
-<section class="slide">
-  <span class="slide-num">05 / 12</span>
-  <h2 class="t"><span class="en">BRAND PHILOSOPHY</span>哲学 ─ 日々飲むもので、自分を整える</h2>
-  <p class="lead">成果（Doing）の前に、状態（Being）を整える。<br>「自分の機嫌を自分で取る」ためのライフスキルを、一杯のお茶に。</p>
-
-  <div class="grid g2" style="margin-top:8px">
-    <div class="card" style="background:var(--ink);color:var(--washi);border:none">
-      <span class="num" style="color:var(--gold)">Being</span>
-      <h3 style="color:#fff;font-family:'Noto Serif JP',serif">状態が、成果を決める</h3>
-      <p style="color:#d6c9a9">辻秀一先生（『スラムダンク勝利学』）が提唱する「ライフスキル」の中核思想。Doing（行動）の前に、Being（自分の機嫌・心の状態）を整える人ほど結果を出す。</p>
-      <div class="quote" style="border-color:var(--gold);color:#fff;margin-top:18px">
-        「自分の機嫌は、自分で取る」<br>
-        ─ 状態を整える主導権は、いつでも自分にある。
-        <cite>辻秀一『スラムダンク勝利学』他より着想</cite>
+    <div class="benefit">
+      <div class="icon">弐</div>
+      <h3>脳が冴え、パフォーマンスが上がる。</h3>
+      <p>L-テアニンは脳のα波を増やし、リラックスしながら集中できる状態をサポートすると報告されています。カフェイン単独のような覚醒スパイクと午後のクラッシュがなく、クリーンでフレッシュな思考が長く続きやすくなります。</p>
+      <div class="ba">
+        <b>Before</b> 覚醒→集中→急失速→もう一杯。<br>
+        <b>After</b> 静かに集中が持続→判断の質が落ちない一日へ。
       </div>
+      <div class="future">深い集中が、長く続いていく。</div>
     </div>
-    <div class="card">
-      <span class="num">武 茶</span>
-      <h3>武茶の解釈</h3>
-      <p>朝の一杯・仕事の前・夜の余白。<br>「整える」を毎日の中に組み込むためのプロダクトが、武茶。</p>
-      <ul class="clean" style="margin-top:14px">
-        <li>朝、心拍を上げず頭を起こす「武 -TAKE-」</li>
-        <li>夜、副交感に切り替える「静 -SHIZUKA-」</li>
-        <li>子どもの水分補給「童 -WARABE-」</li>
-        <li>区切り・儀式のための「道 -DOH-」</li>
-      </ul>
-      <span class="stamp">機嫌を、淹れる。</span>
-    </div>
-  </div>
-  <p style="font-size:12px;color:var(--muted);margin-top:18px">※ 引用は哲学的着想であり、辻秀一先生・関係各位とは現時点で直接の提携関係はありません。敬意を込めて参照しています。</p>
-  <div class="footer-mark">武 茶 — B U C H A</div>
-</section>
-
-<!-- ========== SLIDE 6: PRODUCT LINEUP ========== -->
-<section class="slide">
-  <span class="slide-num">06 / 12</span>
-  <h2 class="t"><span class="en">PRODUCT LINE-UP</span>4つの整え ─ プロダクトライン</h2>
-  <p class="lead">「いつ・どんな状態を整えたいか」で選べる4SKU。1ブランドで朝から夜まで完結する。</p>
-
-  <table>
-    <thead>
-      <tr>
-        <th style="width:18%">SKU</th>
-        <th style="width:22%">役割</th>
-        <th>主原料（候補）</th>
-        <th style="width:14%">想定価格</th>
-        <th style="width:12%">カフェイン</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><b style="font-family:'Noto Serif JP',serif;font-size:18px">武</b> -TAKE-<br><span class="pill gold">朝・集中</span></td>
-        <td>朝の覚醒・日中の集中</td>
-        <td>有機ほうじ茶 / ローズマリー / 朝鮮人参 / 黒大豆</td>
-        <td class="num">¥1,480</td>
-        <td>低</td>
-      </tr>
-      <tr>
-        <td><b style="font-family:'Noto Serif JP',serif;font-size:18px">静</b> -SHIZUKA-<br><span class="pill">夜・休息</span></td>
-        <td>夜の鎮静・睡眠の質</td>
-        <td>有機カモミール / ラベンダー / 大棗 / 黒豆</td>
-        <td class="num">¥1,480</td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td><b style="font-family:'Noto Serif JP',serif;font-size:18px">童</b> -WARABE-<br><span class="pill">親子・常飲</span></td>
-        <td>子ども・妊娠中も飲める日常茶</td>
-        <td>有機黒豆 / 国産ハトムギ / 月見草 / どくだみ</td>
-        <td class="num">¥1,280</td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td><b style="font-family:'Noto Serif JP',serif;font-size:18px">道</b> -DOH-<br><span class="pill red">儀式・贈答</span></td>
-        <td>区切り・贈り物・自分への投資</td>
-        <td>有機抹茶 / 玉露 / 桜葉（季節限定ブレンド）</td>
-        <td class="num">¥2,980</td>
-        <td>中</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="grid g3" style="margin-top:28px">
-    <div class="card"><h3>① 無農薬・有機原料</h3><p>全SKUで有機認証または同等水準の原料のみ使用。残留農薬第三者検査をローンチ前に実施。</p></div>
-    <div class="card"><h3>② テトラ型不織布</h3><p>抽出効率と見た目の所作性。プラスチック不使用素材へ段階移行。</p></div>
-    <div class="card"><h3>③ 月額定期がコア</h3><p>「武 + 静」セットの月額4,980円（縛りなし）が主導線。LTV最大化。</p></div>
-  </div>
-  <div class="footer-mark">武 茶 — B U C H A</div>
-</section>
-
-<!-- ========== SLIDE 7: COMPETITIVE LANDSCAPE ========== -->
-<section class="slide">
-  <span class="slide-num">07 / 12</span>
-  <h2 class="t"><span class="en">COMPETITIVE LANDSCAPE</span>競合と空白ポジション</h2>
-  <p class="lead">直接競合は0社。隣接5社はそれぞれ弱点を抱えており、武茶のポジションは構造的に空いている。</p>
-
-  <div class="grid g2">
-    <div>
-      <table>
-        <thead><tr><th>カテゴリ</th><th>代表ブランド</th><th>武茶との差分</th></tr></thead>
-        <tbody>
-          <tr><td>機能性ハーブ茶</td><td>ヨギティー / ピュカ</td><td>輸入・単発購入中心。常飲設計弱い</td></tr>
-          <tr><td>国産無農薬茶</td><td>old hands tea等</td><td>ECは強いが「整える」軸の世界観なし</td></tr>
-          <tr><td>カフェイン代替</td><td>マッシュルームコーヒー</td><td>味で日本人に刺さりにくい・親子NG</td></tr>
-          <tr><td>子ども向け茶</td><td>麦茶ペット飲料</td><td>大人の「整え」軸とは別文脈</td></tr>
-          <tr><td>D2C薬膳茶</td><td>個人ブランド多数</td><td>ブランド統一・継続購入設計が弱い</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="pos-map">
-      <div class="axis-x"></div>
-      <div class="axis-y"></div>
-      <span class="lbl" style="top:8px;left:50%;transform:translateX(-50%)">↑ 常飲設計が強い</span>
-      <span class="lbl" style="bottom:8px;left:50%;transform:translateX(-50%)">単発購入</span>
-      <span class="lbl" style="top:50%;left:6px;transform:translateY(-50%)">機能特化</span>
-      <span class="lbl" style="top:50%;right:6px;transform:translateY(-50%)">日常 × 世界観</span>
-      <div class="dot us" style="top:38px;right:48px">武茶<br>BUCHA</div>
-      <div class="dot" style="top:62%;left:20%">薬膳茶</div>
-      <div class="dot" style="top:70%;right:30%">無農薬茶EC</div>
-      <div class="dot" style="top:28%;left:18%">ハーブ茶<br>輸入</div>
-      <div class="dot" style="top:55%;right:14%">麦茶<br>ペット</div>
-    </div>
-  </div>
-  <div class="badge-row">
-    <span class="badge">親子で常飲</span>
-    <span class="badge">無農薬・残留検査</span>
-    <span class="badge">朝/夜/儀式の役割設計</span>
-    <span class="badge">月額継続モデル</span>
-    <span class="badge">和の世界観</span>
-  </div>
-  <div class="footer-mark">武 茶 — B U C H A</div>
-</section>
-
-<!-- ========== SLIDE 8: OFFER STRATEGY ========== -->
-<section class="slide">
-  <span class="slide-num">08 / 12</span>
-  <h2 class="t"><span class="en">OFFER STRATEGY</span>オファー設計 ─ A/B/Cの3段運用</h2>
-  <p class="lead">D2C定石の「初回980 → 月額4,980」を主導線とし、年間プレミアム・検証用ライト版を並走。</p>
-
-  <div class="grid g3">
-    <div class="card">
-      <span class="pill gold">案A ／ メイン</span>
-      <h3>王道D2Cオファー</h3>
-      <ul class="clean" style="font-size:14px">
-        <li>初回980円（武+静セット試飲サイズ）</li>
-        <li>2回目以降 月額 4,980円（縛りなし）</li>
-        <li>解約・スキップ自由</li>
-        <li>同梱：辻先生『スラムダンク勝利学』着想の整えカード</li>
-      </ul>
-      <p style="margin-top:12px;color:var(--accent);font-weight:700;font-size:14px">CPA目標 3,500円 / LTV目標 24,000円</p>
-    </div>
-    <div class="card">
-      <span class="pill">案B ／ ロイヤル</span>
-      <h3>年間プレミアムBOX</h3>
-      <ul class="clean" style="font-size:14px">
-        <li>年間契約 49,800円（実質月4,150円）</li>
-        <li>季節限定「道 -DOH-」3回付属</li>
-        <li>専用茶器セットを初回送付</li>
-        <li>解約率を構造的に下げる</li>
-      </ul>
-      <p style="margin-top:12px;color:var(--leaf);font-weight:700;font-size:14px">解約率 1/3 に圧縮可能</p>
-    </div>
-    <div class="card">
-      <span class="pill red">案C ／ 検証</span>
-      <h3>オーガニックライト版</h3>
-      <ul class="clean" style="font-size:14px">
-        <li>note・Threads・SEOからの自然流入用</li>
-        <li>童 -WARABE- 単品 1,280円から</li>
-        <li>定期化率を測定する入り口</li>
-        <li>広告費ゼロでもCVを取りに行く</li>
-      </ul>
-      <p style="margin-top:12px;color:var(--muted);font-weight:700;font-size:14px">SEO/SNS実験ライン</p>
-    </div>
-  </div>
-  <div class="footer-mark">武 茶 — B U C H A</div>
-</section>
-
-<!-- ========== SLIDE 9: P/L SIMULATION ========== -->
-<section class="slide">
-  <span class="slide-num">09 / 12</span>
-  <h2 class="t"><span class="en">P/L SIMULATION</span>PL試算 ─ 3シナリオ</h2>
-  <p class="lead">保守・標準・強気の3シナリオを比較。継続率・CPA・LTVが主変数。<span class="pill">想定値</span></p>
-
-  <table>
-    <thead>
-      <tr>
-        <th>シナリオ</th>
-        <th>月間新規</th>
-        <th>継続率</th>
-        <th>平均LTV</th>
-        <th>月間粗利</th>
-        <th>12ヶ月累計粗利</th>
-        <th>判定</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><b>保守</b><br><span class="pill">100件 / 月</span></td>
-        <td class="num">100</td>
-        <td>40%</td>
-        <td class="num">¥18,000</td>
-        <td class="accent">▲30,000</td>
-        <td class="accent">▲120,000</td>
-        <td><span class="pill red">要見直し</span></td>
-      </tr>
-      <tr style="background:#fffaf0">
-        <td><b>標準</b><br><span class="pill gold">300件 / 月</span></td>
-        <td class="num">300</td>
-        <td>55%</td>
-        <td class="num">¥24,000</td>
-        <td class="num">+120,000</td>
-        <td class="num">+850,000</td>
-        <td><span class="pill gold">ベース計画</span></td>
-      </tr>
-      <tr>
-        <td><b>強気</b><br><span class="pill">800件 / 月</span></td>
-        <td class="num">800</td>
-        <td>65%</td>
-        <td class="num">¥32,000</td>
-        <td class="num">+620,000</td>
-        <td class="num">+5,200,000</td>
-        <td><span class="pill">攻め</span></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="grid g4" style="margin-top:32px">
-    <div class="stat"><div class="v">¥4,980</div><div class="l">月額単価(税込)</div></div>
-    <div class="stat"><div class="v">55%</div><div class="l">標準・継続率目標</div></div>
-    <div class="stat"><div class="v">¥3,500</div><div class="l">CPA上限</div></div>
-    <div class="stat"><div class="v">¥24,000</div><div class="l">標準LTV</div></div>
-  </div>
-  <p style="font-size:12px;color:var(--muted);margin-top:18px">※ 数値は前提条件付きの想定値。Phase0の市場検証で更新する。</p>
-  <div class="footer-mark">武 茶 — B U C H A</div>
-</section>
-
-<!-- ========== SLIDE 10: ROADMAP ========== -->
-<section class="slide">
-  <span class="slide-num">10 / 12</span>
-  <h2 class="t"><span class="en">ROADMAP</span>5〜6週でローンチする工程表</h2>
-  <p class="lead">P0確定 → P5公開まで、内製＋既存パートナー網で短期遂行する。</p>
-
-  <div class="timeline">
-    <div class="step">
-      <span class="w">WEEK 0</span>
-      <h4>P0：確定</h4>
-      <p>事業計画決裁／予算確保／ブランド名・SKU方針FIX</p>
-    </div>
-    <div class="step">
-      <span class="w">WEEK 1-2</span>
-      <h4>P1：OEM打診</h4>
-      <p>有機原料OEM 3社に見積／配合レシピ確定／小ロット試作</p>
-    </div>
-    <div class="step">
-      <span class="w">WEEK 2-3</span>
-      <h4>P2：商標・検査</h4>
-      <p>商標出願（武茶 / TAKE / SHIZUKA / WARABE / DOH）／残留農薬検査／景表法・薬機法レビュー</p>
-    </div>
-    <div class="step">
-      <span class="w">WEEK 3-4</span>
-      <h4>P3：Shopify＋LP</h4>
-      <p>Shopify構築／LP・商品ページ／定期決済導線／同梱物（整えカード）制作</p>
-    </div>
-    <div class="step">
-      <span class="w">WEEK 4-5</span>
-      <h4>P4：集客準備</h4>
-      <p>Meta/Google広告クリエイティブ／note・Threads・LINE導線／インフルエンサー打診</p>
-    </div>
-    <div class="step">
-      <span class="w">WEEK 5-6</span>
-      <h4>P5：ローンチ</h4>
-      <p>先行100名募集 → 配信開始 → 数値計測 → 翌週からスケール判断</p>
-    </div>
-  </div>
-
-  <div class="grid g3" style="margin-top:32px">
-    <div class="card"><h3>意思決定ゲート</h3><p>P1完了時：OEM単価が想定内か（GO/STOP）／P3完了時：LP着座CVR 1.5%以上か（GO/SCALE）</p></div>
-    <div class="card"><h3>並走チーム</h3><p>OEM／法務（商標）／クリエイティブ（LP・パッケージ）／広告運用／SNS。社内＋外注ハイブリッド</p></div>
-    <div class="card"><h3>リスクヘッジ</h3><p>初回ロット小ロット／在庫リスク最小化／景表法事前レビュー必須／成分エビデンスを必ず社内蓄積</p></div>
-  </div>
-  <div class="footer-mark">武 茶 — B U C H A</div>
-</section>
-
-<!-- ========== SLIDE 11: INITIAL INVESTMENT ========== -->
-<section class="slide">
-  <span class="slide-num">11 / 12</span>
-  <h2 class="t"><span class="en">INITIAL INVESTMENT</span>初期投資 ─ 300〜400万円の内訳</h2>
-  <p class="lead">既存D2C相場と比較しても圧縮した、リーン・ローンチ予算。</p>
-
-  <div class="grid g2">
-    <div>
-      <table>
-        <thead><tr><th>カテゴリ</th><th>内容</th><th style="text-align:right">予算</th></tr></thead>
-        <tbody>
-          <tr><td>OEM・原料</td><td>有機原料／4SKU初回ロット／パッケージ印刷</td><td class="num" style="text-align:right">¥150-200万</td></tr>
-          <tr><td>商標・検査</td><td>商標出願5件／残留農薬検査／薬機・景表法レビュー／パッケージデザイン</td><td class="num" style="text-align:right">¥80-100万</td></tr>
-          <tr><td>LP・初動広告</td><td>Shopify／LP制作／クリエイティブ／初月Meta+Google広告</td><td class="num" style="text-align:right">¥80-100万</td></tr>
-          <tr style="background:var(--ink);color:#fff"><td><b>合計</b></td><td></td><td class="num" style="text-align:right;color:var(--gold)"><b>¥310-400万</b></td></tr>
-        </tbody>
-      </table>
-      <p style="font-size:13px;color:var(--muted);margin-top:14px">※ 既存制作リソース・社内クリエイティブ稼働で20-30%圧縮可能。</p>
-    </div>
-    <div>
-      <div class="card" style="background:var(--leaf);color:#fff;border:none">
-        <h3 style="color:#fff">回収シナリオ（標準ケース）</h3>
-        <ul class="clean" style="margin-top:8px">
-          <li style="border-color:rgba(255,255,255,.2);color:#fff">月間粗利 +12万円 × 12ヶ月 = +144万円</li>
-          <li style="border-color:rgba(255,255,255,.2);color:#fff">2年目から月額50万円超のリカーリング想定</li>
-          <li style="border-color:rgba(255,255,255,.2);color:#fff">2年以内に投資回収 → 3年目から利益貢献</li>
-        </ul>
-        <p style="color:#d6c9a9;font-size:13px;margin-top:12px">D2Cの常識である「2-3年回収」より早い水準。理由は4SKU相互送客と縛りなし定期によるLTV最大化。</p>
+    <div class="benefit">
+      <div class="icon">参</div>
+      <h3>家族みんなが、健やかに。</h3>
+      <p>無農薬・第三者検査・契約農家ベースの設計だから、親が安心して飲めるし、子供にも安心して出せる。親子で同じ一杯を共有することが、食卓と暮らしの整いにつながります。</p>
+      <div class="ba">
+        <b>Before</b> 自分は栄養に気を遣うが、家族には別物。<br>
+        <b>After</b> 同じ一杯を分け合う、家族みんなの常飲習慣に。
       </div>
-      <div class="card" style="margin-top:18px">
-        <h3>追加リスク資金</h3>
-        <p>初動が標準シナリオ未達の場合、3ヶ月で広告・SKUを見直すルール。追加投資ゲートは <b>+100万円まで</b>。それ以上はPivot or Stop。</p>
-      </div>
+      <div class="future">家庭の土台が、静かに整っていく。</div>
     </div>
   </div>
-  <div class="footer-mark">武 茶 — B U C H A</div>
+  <p class="note-source">※健康に関する記述は研究で報告されている一般的傾向です。効果には個人差があります。</p>
+  <span class="footer-mark">B U C H A</span>
 </section>
 
-<!-- ========== SLIDE 12: NEXT ACTIONS ========== -->
+<!-- Slide 10: 3ヶ月後の未来 -->
 <section class="slide">
-  <span class="slide-num">12 / 12</span>
-  <h2 class="t"><span class="en">NEXT ACTIONS</span>王の判断 ─ 今週の3つのGO</h2>
-  <p class="lead">本日この場で意思決定すべきは、以下3点。OK判断が出れば、明日から Phase1 を着手する。</p>
-
-  <div class="grid g3">
-    <div class="card" style="border-top:6px solid var(--accent)">
-      <span class="num">①</span>
-      <h3>商標出願 GO</h3>
-      <p>「武茶 / BUCHA / TAKE / SHIZUKA / WARABE / DOH」を弁理士経由で即日出願。費用 約30万円。<br><b>判断：GO / 保留</b></p>
+  <span class="slide-num">10 / 14</span>
+  <h2 class="t"><span class="en">YOUR 3 MONTHS LATER</span>あなたの、3ヶ月後の一日。</h2>
+  <p class="lead">
+    特別な努力をしなくていい。コーヒー1杯を整い茶1杯に置き換える、たったそれだけ。<br>
+    3ヶ月後、こんな一日があなたの日常になっているかもしれません。
+  </p>
+  <div class="grid g3" style="margin-top:24px;">
+    <div class="scene">
+      <div class="time">M O R N I N G</div>
+      <h3>淹れる時間が、自分を取り戻す時間になる。</h3>
+      <p>目覚めてすぐ手にしていたコーヒーの代わりに、湯気の立つ整い茶を淹れる。一杯を待つ数分間で、頭の中が静かに整っていく。今日やるべきこと、優先順位、そして、ありたい自分。</p>
     </div>
-    <div class="card" style="border-top:6px solid var(--gold)">
-      <span class="num">②</span>
-      <h3>OEM打診 GO</h3>
-      <p>有機原料OEM 3社に並行打診・見積取得。試作費用 20-30万円。<br><b>判断：GO / 1社のみ / 保留</b></p>
+    <div class="scene">
+      <div class="time">A F T E R N O O N</div>
+      <h3>家族と分け合える、共通の一杯。</h3>
+      <p>夕方、子供のおやつ時間に、自分の仕事の合間に、同じ茶器から注いだ整い茶を分け合う。「これ、おいしいね」その一言が、家庭の空気をやわらかく整えていく。</p>
     </div>
-    <div class="card" style="border-top:6px solid var(--leaf)">
-      <span class="num">③</span>
-      <h3>Phase1 着手 GO</h3>
-      <p>5-6週ロードマップを起動。Week1から並走チーム編成・予算300万を仮押さえ。<br><b>判断：GO / スケジュール調整 / 保留</b></p>
-    </div>
-  </div>
-
-  <div style="margin-top:48px;padding:36px;background:var(--ink);color:#fff;border-radius:8px;border-left:6px solid var(--gold)">
-    <div style="font-family:'Noto Serif JP',serif;font-size:14px;letter-spacing:.4em;color:var(--gold)">CLOSING</div>
-    <div class="copy" style="color:#fff;font-size:34px;margin-top:12px">
-      コーヒーを飲むように、<br>
-      <span style="color:var(--gold)">自分を整える</span>習慣を、定番にする。
-    </div>
-    <p style="color:#d6c9a9;margin-top:18px;font-size:14px">
-      武茶は、家族で常飲できる無農薬の整え茶として、日本のD2C市場における空白ポジションを取りに行く。<br>
-      投資300-400万・5-6週ローンチ・12ヶ月で粗利 +85万円（標準）。2年目から利益貢献フェーズへ。
-    </p>
-  </div>
-
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:36px">
-    <div class="seal">武茶</div>
-    <div style="text-align:right">
-      <div style="font-family:'Noto Serif JP',serif;font-size:13px;letter-spacing:.4em;color:var(--muted)">武 茶 ─ B U C H A</div>
-      <div style="font-size:12px;color:var(--muted);margin-top:6px">事業計画 簡易版 / 2026-05-15 / for 王</div>
+    <div class="scene">
+      <div class="time">N I G H T</div>
+      <h3>深い眠りが、明日の自分を支える。</h3>
+      <p>夜のカフェインを手放すと、眠りの入り口は驚くほどスムーズになる。スマホを置き、最後の一杯を静かにすする。気づけば、朝までぐっすり眠れる体に変わっている。</p>
     </div>
   </div>
+  <p class="lead" style="margin-top:28px;">
+    変わったのは、たった一つの習慣。<br>
+    けれど、体と脳と家族の景色が、少しずつ整っていく。
+  </p>
+  <span class="footer-mark">B U C H A</span>
+</section>
+
+<!-- Slide 11: プロダクト4SKU -->
+<section class="slide">
+  <span class="slide-num">11 / 14</span>
+  <h2 class="t"><span class="en">PRODUCTS</span>四つの、整いの一杯。</h2>
+  <p class="lead">一日と暮らしのシーンに合わせて、選べる4種。<br>同じ「整い茶」というブランドのもとに、役割の異なる4つの設計。</p>
+  <div class="grid g4" style="margin-top:24px;">
+    <div class="product">
+      <div class="kanji">武</div>
+      <div class="romaji">T A K E</div>
+      <h3>朝の集中を、立ち上げる。</h3>
+      <p>適度なカフェインとL-テアニンの黄金比で、攻めの一日の入り口を支える。商談前・執筆前・決断の朝に。</p>
+    </div>
+    <div class="product">
+      <div class="kanji">静</div>
+      <div class="romaji">S H I Z U K A</div>
+      <h3>夜を、深く鎮める。</h3>
+      <p>ノンカフェインまたは低カフェイン設計で、夜の頭と体を静かに鎮める。眠りの質に向き合うための一杯。</p>
+    </div>
+    <div class="product">
+      <div class="kanji">童</div>
+      <div class="romaji">W A R A B E</div>
+      <h3>家族みんなで、整える。</h3>
+      <p>子供にも安心して出せる、やさしい設計のノンカフェイン茶。親子で常飲できる、家庭の常備の一杯。</p>
+    </div>
+    <div class="product">
+      <div class="kanji">道</div>
+      <div class="romaji">D O H</div>
+      <h3>毎日に、芯を通す。</h3>
+      <p>朝から夜まで、自然と寄り添うベーシック。「特別な日」ではなく「いつもの日」を整えていく主役の一杯。</p>
+    </div>
+  </div>
+  <p class="lead" style="margin-top:28px;">
+    全SKU共通で、無農薬・契約農家・第三者検査の基準を満たした茶葉のみを使用しています。
+  </p>
+  <span class="footer-mark">B U C H A</span>
+</section>
+
+<!-- Slide 12: 安心の設計 -->
+<section class="slide">
+  <span class="slide-num">12 / 14</span>
+  <h2 class="t"><span class="en">SAFETY BY DESIGN</span>「親が子供に出せるか」を、基準に。</h2>
+  <p class="lead">
+    武茶のすべての設計判断は、たったひとつの問いから始まっています。<br>
+    「これを、自分の子供に毎日出せるか?」
+  </p>
+  <ul class="design-list">
+    <li><b>無農薬。</b>残留農薬・ネオニコチノイド系のリスクを避けるため、無農薬で育てられた茶葉のみを採用しています。</li>
+    <li><b>契約農家。</b>顔の見える契約農家からの直接仕入れにより、栽培から加工までを把握できる体制を取っています。</li>
+    <li><b>第三者検査。</b>農薬・カビ毒(オクラトキシン等)について、第三者機関による検査を前提に設計しています。</li>
+    <li><b>添加物の積層を避ける。</b>市販ペットボトル茶のような香料・調整成分の積み重ねではなく、茶葉本来の味と機能を生かす配合に絞っています。</li>
+    <li><b>親子で常飲できる強度。</b>大人だけのウェルネス商品ではなく、家族全員の常飲習慣として持続できる「やさしさ」を中心に置いています。</li>
+  </ul>
+  <span class="footer-mark">B U C H A</span>
+</section>
+
+<!-- Slide 13: オファー -->
+<section class="slide">
+  <span class="slide-num">13 / 14</span>
+  <h2 class="t"><span class="en">START YOUR ROUTINE</span>はじめは、一杯から。</h2>
+  <p class="lead">
+    「合うかどうかは、飲んでみないとわからない」<br>
+    だから、無理なく試せる入り口を用意しました。
+  </p>
+  <div class="offer">
+    <div class="tag">F I R S T &nbsp; T R I A L</div>
+    <div class="price">980<small>円(税込)</small></div>
+    <h3>初回お試しセット</h3>
+    <p>整い茶を、自分の暮らしに合うかどうか確かめるための入り口。<br>合わなければ、続ける必要はありません。<br>合ったときだけ、そのまま日常に組み込んでください。</p>
+    <div class="features">
+      <span>定期縛りなし</span>
+      <span>全SKUから選べる</span>
+      <span>送料込み</span>
+      <span>初回1回限り</span>
+    </div>
+  </div>
+  <p class="lead" style="margin-top:28px;text-align:center;">
+    必要なのは、コーヒー1杯を整い茶1杯に置き換える勇気だけ。<br>
+    あとは、あなたの体と暮らしが、変化を教えてくれます。
+  </p>
+  <span class="footer-mark">B U C H A</span>
+</section>
+
+<!-- Slide 14: クロージング -->
+<section class="slide dark">
+  <span class="slide-num">14 / 14</span>
+  <div class="kicker" style="text-align:center;">B U C H A &nbsp; — &nbsp; T O T O N O I &nbsp; C H A</div>
+  <p class="final-copy">自分の機嫌は、<br>自分で淹れる。</p>
+  <p class="final-sub">脳の潜在能力を最大化する、整い茶。</p>
+  <p class="lead" style="text-align:center;color:#d6c9a9;margin-top:40px;max-width:720px;margin-left:auto;margin-right:auto;">
+    強くあろうとすることに、疲れた夜もある。<br>
+    完璧であろうとすることに、追い詰められた朝もある。<br>
+    そのすべてを、一杯のお茶が、静かに受け止めてくれる。<br><br>
+    武茶は、整いの一杯。<br>
+    今日、あなたの一日を整える小さな選択になれたら、それで十分です。
+  </p>
+  <p style="text-align:center;margin-top:48px;font-family:'Noto Serif JP',serif;font-size:14px;letter-spacing:.5em;color:var(--gold);">
+    B &nbsp; U &nbsp; C &nbsp; H &nbsp; A
+  </p>
+  <span class="footer-mark">武 茶 / 整 い 茶</span>
 </section>
 
 </div>
